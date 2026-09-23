@@ -1,0 +1,293 @@
+/* FE Release Version: 3.4.21 */
+/* lang compiler Version: 3.0.4 */
+//
+//       CONFIDENTIAL AND PROPRIETARY SOFTWARE OF ARM PHYSICAL IP, INC.
+//      
+//       Copyright (c) 1993 - 2018 ARM Physical IP, Inc.  All Rights Reserved.
+//      
+//       Use of this Software is subject to the terms and conditions of the
+//       applicable license agreement with ARM Physical IP, Inc.
+//       In addition, this Software is protected by patents, copyright law 
+//       and international treaties.
+//      
+//       The copyright notice(s) in this Software does not indicate actual or
+//       intended publication of this Software.
+//
+//      Verilog model for Synchronous Two-Port Register File
+//
+//       Instance Name:              rf_2p_hse
+//       Words:                      64
+//       Bits:                       16
+//       Mux:                        1
+//       Drive:                      4
+//       Write Mask:                 Off
+//       Write Thru:                 Off
+//       Extra Margin Adjustment:    On
+//       Redundant Rows:             0
+//       Redundant Columns:          0
+//       Test Muxes                  On
+//       Power Gating:               Off
+//       Retention:                  On
+//       Pipeline:                   Off
+//       Weak Bit Test:	        Off
+//       Read Disturb Test:	        Off
+//       
+//       Creation Date:  Wed May 30 13:58:10 2018
+//       Version: 	r9p1
+//
+//      Verified
+//
+//      Modeling Assumptions: This model is for use by only TetraMax ATPG tool.
+//      It is not intended to be used by any Verilog Simulator.
+//
+//      Modeling Limitations: These models have limited functionality as
+//      defined by the TetraMax modelling guidelines. These models are
+//      developed on Verilog syntax but they don't fully represent the
+//      functionality of the memory model as they are restricted by
+//      the ATPG tool.The tetramax 2001.08 might generate wrong ATPG
+//      vectors if full sequential ATPG engine is used. We have used
+//      fast sequential ATPG engine for verification of all the memories on
+//      recommendation from Synopsys Tetramax expert.  The models have been tested
+//      by generating the ATPG vectors and simulating them as well as running functional
+//      vectors through tetramax logical simulation engine.
+//      Tool Limitation: Out of bound address handling can not be included in tetramax
+//                       model. Address can be kept in bound for tool version 2007.03
+//                       onwards by using command line option 'set contention abus'
+//
+//      Known Bugs: None.
+//
+//      Known Work Arounds: N/A
+//
+`define read_write  readx
+
+
+`timescale 1ps/1ps
+`celldefine
+`ifdef POWER_PINS
+module rf_2p_hse (VDDCE, VDDPE, VSSE, CENYA, AYA, CENYB, AYB, DYB, QA, CLKA, CENA,
+    AA, CLKB, CENB, AB, DB, EMAA, EMASA, EMAB, EMAWB, TENA, BENA, TCENA, TAA, TQA,
+    TENB, TCENB, TAB, TDB, RET1N, STOVA, STOVB, COLLDISN);
+`else
+module rf_2p_hse (CENYA, AYA, CENYB, AYB, DYB, QA, CLKA, CENA, AA, CLKB, CENB, AB,
+    DB, EMAA, EMASA, EMAB, EMAWB, TENA, BENA, TCENA, TAA, TQA, TENB, TCENB, TAB, TDB,
+    RET1N, STOVA, STOVB, COLLDISN);
+`endif
+  parameter 		   bits = 16;
+  parameter 		   word_depth = 64;
+  parameter 		   addr_width = 6;
+
+  output  CENYA;
+  output [5:0] AYA;
+  output  CENYB;
+  output [5:0] AYB;
+  output [15:0] DYB;
+  output [15:0] QA;
+  input  CLKA;
+  input  CENA;
+  input [5:0] AA;
+  input  CLKB;
+  input  CENB;
+  input [5:0] AB;
+  input [15:0] DB;
+  input [2:0] EMAA;
+  input  EMASA;
+  input [2:0] EMAB;
+  input [1:0] EMAWB;
+  input  TENA;
+  input  BENA;
+  input  TCENA;
+  input [5:0] TAA;
+  input [15:0] TQA;
+  input  TENB;
+  input  TCENB;
+  input [5:0] TAB;
+  input [15:0] TDB;
+  input  RET1N;
+  input  STOVA;
+  input  STOVB;
+  input  COLLDISN;
+`ifdef POWER_PINS
+  inout VDDCE;
+  inout VDDPE;
+  inout VSSE;
+`endif
+
+  wire [5:0] BUS_AA;
+  assign BUS_AA = AA;
+
+  wire [5:0] BMUX_AA;
+  wire BMUX_CENA;
+
+  _MUX maA0 (TENA, TAA[0], BUS_AA[0], BMUX_AA[0]);
+  buf bufmaA0(AYA[0],BMUX_AA[0]);
+  _MUX maA1 (TENA, TAA[1], BUS_AA[1], BMUX_AA[1]);
+  buf bufmaA1(AYA[1],BMUX_AA[1]);
+  _MUX maA2 (TENA, TAA[2], BUS_AA[2], BMUX_AA[2]);
+  buf bufmaA2(AYA[2],BMUX_AA[2]);
+  _MUX maA3 (TENA, TAA[3], BUS_AA[3], BMUX_AA[3]);
+  buf bufmaA3(AYA[3],BMUX_AA[3]);
+  _MUX maA4 (TENA, TAA[4], BUS_AA[4], BMUX_AA[4]);
+  buf bufmaA4(AYA[4],BMUX_AA[4]);
+  _MUX maA5 (TENA, TAA[5], BUS_AA[5], BMUX_AA[5]);
+  buf bufmaA5(AYA[5],BMUX_AA[5]);
+
+  _MUX mcenA    (TENA, TCENA, CENA, BMUX_CENA); 
+  buf bufmcenA (CENYA, BMUX_CENA);
+  wire [5:0] BUS_AB;
+  assign BUS_AB = AB;
+
+  wire [15:0] BUS_DB;
+  assign BUS_DB = DB;
+
+  wire [5:0] BMUX_AB;
+  wire [15:0] BMUX_DB;
+  wire BMUX_CENB;
+
+  _MUX maB0 (TENB, TAB[0], BUS_AB[0], BMUX_AB[0]);
+  buf bufmaB0(AYB[0],BMUX_AB[0]);
+  _MUX maB1 (TENB, TAB[1], BUS_AB[1], BMUX_AB[1]);
+  buf bufmaB1(AYB[1],BMUX_AB[1]);
+  _MUX maB2 (TENB, TAB[2], BUS_AB[2], BMUX_AB[2]);
+  buf bufmaB2(AYB[2],BMUX_AB[2]);
+  _MUX maB3 (TENB, TAB[3], BUS_AB[3], BMUX_AB[3]);
+  buf bufmaB3(AYB[3],BMUX_AB[3]);
+  _MUX maB4 (TENB, TAB[4], BUS_AB[4], BMUX_AB[4]);
+  buf bufmaB4(AYB[4],BMUX_AB[4]);
+  _MUX maB5 (TENB, TAB[5], BUS_AB[5], BMUX_AB[5]);
+  buf bufmaB5(AYB[5],BMUX_AB[5]);
+
+  _MUX mdB0 (TENB, TDB[0], BUS_DB[0], BMUX_DB[0]);
+  buf bufmdB0 (DYB[0],BMUX_DB[0]);
+  _MUX mdB1 (TENB, TDB[1], BUS_DB[1], BMUX_DB[1]);
+  buf bufmdB1 (DYB[1],BMUX_DB[1]);
+  _MUX mdB2 (TENB, TDB[2], BUS_DB[2], BMUX_DB[2]);
+  buf bufmdB2 (DYB[2],BMUX_DB[2]);
+  _MUX mdB3 (TENB, TDB[3], BUS_DB[3], BMUX_DB[3]);
+  buf bufmdB3 (DYB[3],BMUX_DB[3]);
+  _MUX mdB4 (TENB, TDB[4], BUS_DB[4], BMUX_DB[4]);
+  buf bufmdB4 (DYB[4],BMUX_DB[4]);
+  _MUX mdB5 (TENB, TDB[5], BUS_DB[5], BMUX_DB[5]);
+  buf bufmdB5 (DYB[5],BMUX_DB[5]);
+  _MUX mdB6 (TENB, TDB[6], BUS_DB[6], BMUX_DB[6]);
+  buf bufmdB6 (DYB[6],BMUX_DB[6]);
+  _MUX mdB7 (TENB, TDB[7], BUS_DB[7], BMUX_DB[7]);
+  buf bufmdB7 (DYB[7],BMUX_DB[7]);
+  _MUX mdB8 (TENB, TDB[8], BUS_DB[8], BMUX_DB[8]);
+  buf bufmdB8 (DYB[8],BMUX_DB[8]);
+  _MUX mdB9 (TENB, TDB[9], BUS_DB[9], BMUX_DB[9]);
+  buf bufmdB9 (DYB[9],BMUX_DB[9]);
+  _MUX mdB10 (TENB, TDB[10], BUS_DB[10], BMUX_DB[10]);
+  buf bufmdB10 (DYB[10],BMUX_DB[10]);
+  _MUX mdB11 (TENB, TDB[11], BUS_DB[11], BMUX_DB[11]);
+  buf bufmdB11 (DYB[11],BMUX_DB[11]);
+  _MUX mdB12 (TENB, TDB[12], BUS_DB[12], BMUX_DB[12]);
+  buf bufmdB12 (DYB[12],BMUX_DB[12]);
+  _MUX mdB13 (TENB, TDB[13], BUS_DB[13], BMUX_DB[13]);
+  buf bufmdB13 (DYB[13],BMUX_DB[13]);
+  _MUX mdB14 (TENB, TDB[14], BUS_DB[14], BMUX_DB[14]);
+  buf bufmdB14 (DYB[14],BMUX_DB[14]);
+  _MUX mdB15 (TENB, TDB[15], BUS_DB[15], BMUX_DB[15]);
+  buf bufmdB15 (DYB[15],BMUX_DB[15]);
+
+  _MUX mcenB    (TENB, TCENB, CENB, BMUX_CENB); 
+  buf bufmcenB (CENYB, BMUX_CENB);
+  wire [15:0] SHIFT_DB;
+  assign SHIFT_DB=BMUX_DB;
+
+  reg [0:0]     mem0 [63:0];
+  reg [1:1]     mem1 [63:0];
+  reg [2:2]     mem2 [63:0];
+  reg [3:3]     mem3 [63:0];
+  reg [4:4]     mem4 [63:0];
+  reg [5:5]     mem5 [63:0];
+  reg [6:6]     mem6 [63:0];
+  reg [7:7]     mem7 [63:0];
+  reg [8:8]     mem8 [63:0];
+  reg [9:9]     mem9 [63:0];
+  reg [10:10]     mem10 [63:0];
+  reg [11:11]     mem11 [63:0];
+  reg [12:12]     mem12 [63:0];
+  reg [13:13]     mem13 [63:0];
+  reg [14:14]     mem14 [63:0];
+  reg [15:15]     mem15 [63:0];
+
+  reg [15:0] INT_QA;
+  wire [15:0] BMUX_QA;
+
+  wire NOT_CENA;
+  not not_cenA (NOT_CENA, BMUX_CENA);
+  always @ ( posedge CLKA ) if ( NOT_CENA ) INT_QA[0]=mem0[BMUX_AA];
+  always @ ( posedge CLKA ) if ( NOT_CENA ) INT_QA[1]=mem1[BMUX_AA];
+  always @ ( posedge CLKA ) if ( NOT_CENA ) INT_QA[2]=mem2[BMUX_AA];
+  always @ ( posedge CLKA ) if ( NOT_CENA ) INT_QA[3]=mem3[BMUX_AA];
+  always @ ( posedge CLKA ) if ( NOT_CENA ) INT_QA[4]=mem4[BMUX_AA];
+  always @ ( posedge CLKA ) if ( NOT_CENA ) INT_QA[5]=mem5[BMUX_AA];
+  always @ ( posedge CLKA ) if ( NOT_CENA ) INT_QA[6]=mem6[BMUX_AA];
+  always @ ( posedge CLKA ) if ( NOT_CENA ) INT_QA[7]=mem7[BMUX_AA];
+  always @ ( posedge CLKA ) if ( NOT_CENA ) INT_QA[8]=mem8[BMUX_AA];
+  always @ ( posedge CLKA ) if ( NOT_CENA ) INT_QA[9]=mem9[BMUX_AA];
+  always @ ( posedge CLKA ) if ( NOT_CENA ) INT_QA[10]=mem10[BMUX_AA];
+  always @ ( posedge CLKA ) if ( NOT_CENA ) INT_QA[11]=mem11[BMUX_AA];
+  always @ ( posedge CLKA ) if ( NOT_CENA ) INT_QA[12]=mem12[BMUX_AA];
+  always @ ( posedge CLKA ) if ( NOT_CENA ) INT_QA[13]=mem13[BMUX_AA];
+  always @ ( posedge CLKA ) if ( NOT_CENA ) INT_QA[14]=mem14[BMUX_AA];
+  always @ ( posedge CLKA ) if ( NOT_CENA ) INT_QA[15]=mem15[BMUX_AA];
+
+  _MUX mqa0  (BENA, TQA[0], INT_QA[0], BMUX_QA[0]);
+  _MUX mqa1  (BENA, TQA[1], INT_QA[1], BMUX_QA[1]);
+  _MUX mqa2  (BENA, TQA[2], INT_QA[2], BMUX_QA[2]);
+  _MUX mqa3  (BENA, TQA[3], INT_QA[3], BMUX_QA[3]);
+  _MUX mqa4  (BENA, TQA[4], INT_QA[4], BMUX_QA[4]);
+  _MUX mqa5  (BENA, TQA[5], INT_QA[5], BMUX_QA[5]);
+  _MUX mqa6  (BENA, TQA[6], INT_QA[6], BMUX_QA[6]);
+  _MUX mqa7  (BENA, TQA[7], INT_QA[7], BMUX_QA[7]);
+  _MUX mqa8  (BENA, TQA[8], INT_QA[8], BMUX_QA[8]);
+  _MUX mqa9  (BENA, TQA[9], INT_QA[9], BMUX_QA[9]);
+  _MUX mqa10  (BENA, TQA[10], INT_QA[10], BMUX_QA[10]);
+  _MUX mqa11  (BENA, TQA[11], INT_QA[11], BMUX_QA[11]);
+  _MUX mqa12  (BENA, TQA[12], INT_QA[12], BMUX_QA[12]);
+  _MUX mqa13  (BENA, TQA[13], INT_QA[13], BMUX_QA[13]);
+  _MUX mqa14  (BENA, TQA[14], INT_QA[14], BMUX_QA[14]);
+  _MUX mqa15  (BENA, TQA[15], INT_QA[15], BMUX_QA[15]);
+
+  buf bufqa0 (QA[0], BMUX_QA[0]);
+  buf bufqa1 (QA[1], BMUX_QA[1]);
+  buf bufqa2 (QA[2], BMUX_QA[2]);
+  buf bufqa3 (QA[3], BMUX_QA[3]);
+  buf bufqa4 (QA[4], BMUX_QA[4]);
+  buf bufqa5 (QA[5], BMUX_QA[5]);
+  buf bufqa6 (QA[6], BMUX_QA[6]);
+  buf bufqa7 (QA[7], BMUX_QA[7]);
+  buf bufqa8 (QA[8], BMUX_QA[8]);
+  buf bufqa9 (QA[9], BMUX_QA[9]);
+  buf bufqa10 (QA[10], BMUX_QA[10]);
+  buf bufqa11 (QA[11], BMUX_QA[11]);
+  buf bufqa12 (QA[12], BMUX_QA[12]);
+  buf bufqa13 (QA[13], BMUX_QA[13]);
+  buf bufqa14 (QA[14], BMUX_QA[14]);
+  buf bufqa15 (QA[15], BMUX_QA[15]);
+
+  wire NOT_CENB;
+  not (NOT_CENB, BMUX_CENB);
+
+  always @ ( posedge CLKB ) if ( NOT_CENB ) mem0[BMUX_AB]=SHIFT_DB[0];
+  always @ ( posedge CLKB ) if ( NOT_CENB ) mem1[BMUX_AB]=SHIFT_DB[1];
+  always @ ( posedge CLKB ) if ( NOT_CENB ) mem2[BMUX_AB]=SHIFT_DB[2];
+  always @ ( posedge CLKB ) if ( NOT_CENB ) mem3[BMUX_AB]=SHIFT_DB[3];
+  always @ ( posedge CLKB ) if ( NOT_CENB ) mem4[BMUX_AB]=SHIFT_DB[4];
+  always @ ( posedge CLKB ) if ( NOT_CENB ) mem5[BMUX_AB]=SHIFT_DB[5];
+  always @ ( posedge CLKB ) if ( NOT_CENB ) mem6[BMUX_AB]=SHIFT_DB[6];
+  always @ ( posedge CLKB ) if ( NOT_CENB ) mem7[BMUX_AB]=SHIFT_DB[7];
+  always @ ( posedge CLKB ) if ( NOT_CENB ) mem8[BMUX_AB]=SHIFT_DB[8];
+  always @ ( posedge CLKB ) if ( NOT_CENB ) mem9[BMUX_AB]=SHIFT_DB[9];
+  always @ ( posedge CLKB ) if ( NOT_CENB ) mem10[BMUX_AB]=SHIFT_DB[10];
+  always @ ( posedge CLKB ) if ( NOT_CENB ) mem11[BMUX_AB]=SHIFT_DB[11];
+  always @ ( posedge CLKB ) if ( NOT_CENB ) mem12[BMUX_AB]=SHIFT_DB[12];
+  always @ ( posedge CLKB ) if ( NOT_CENB ) mem13[BMUX_AB]=SHIFT_DB[13];
+  always @ ( posedge CLKB ) if ( NOT_CENB ) mem14[BMUX_AB]=SHIFT_DB[14];
+  always @ ( posedge CLKB ) if ( NOT_CENB ) mem15[BMUX_AB]=SHIFT_DB[15];
+
+endmodule
+
+`undef read_write
+`endcelldefine

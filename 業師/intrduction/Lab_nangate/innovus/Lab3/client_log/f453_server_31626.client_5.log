@@ -1,0 +1,102 @@
+#################  nanoroute  ################
+#Copyright (c) 1999 - 2010
+#Cadence Design Systems, Inc.
+#All rights reserved. This work may not be copied, modified, 
+#re-published, uploaded, executed, or distributed in any way, 
+#in any medium, whether in whole or in part, without prior 
+#written permission from Cadence Design Systems, Inc.
+#http://www.cadence.com
+#
+#Product Version : 21.13-s100_1 NR220220-0140/21_13-UB
+#Database Version : 18.20 {superthreading v2.17}
+#Checkout Date : 02/20/2022:01:40:25 from 21_13
+#Compiled Date : 03/04/2022 14:01:27 using tools-
+#Hostname : f453_server (x86_64 w/Linux 3.10.0-1160.el7.x86_64 Xeon E5-2690_v3 2.60GHz 12Core 48CPU 30MB cache 129GB)
+#Current Working Directory : /home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab3
+#nanoroute Executable : /usr/cad/cadence/INNOVUS/INNOVUS_21.13.000/tools.lnx86/plato/bin/64bit/nanoroute
+#Current Date and Time : Fri May 19 12:52:20 2023
+#
+#number of cpu = 1.
+#client index = 1684472197.
+#Connected to server f453_server on port 53887. (1 threads)
+#Loading library ...
+#    loading LIBRARY_HEADER ...
+#    loading TECHNOLOGY ...
+#    loading 22 LAYERS ...
+#    loading 27 VIAS ...
+#    loading 19 VIA_RULES ...
+#    loading 1 RULES ...
+#    loading TIMING ...
+#    receiving 152 CELLS ...
+#setNanoRouteMode -droute_post_route_spread_wire "auto"
+#setNanoRouteMode -droute_start_iteration 0
+#setNanoRouteMode -route_antenna_cell_name "ANTENNA_X1"
+#setNanoRouteMode -route_insert_antenna_diode true
+#setNanoRouteMode -route_strictly_honor_non_default_rule "false"
+#setNanoRouteMode -route_with_eco true
+#Loading design CHIP init ...
+#    loading DESIGN_VIEW CHIP,init ... 
+#    loading 78 CHILD CELL_VIEWS ...
+#    loading 210 VIAS ...
+#    loading 10889 INSTANCES ...
+#    loading 20 DIRTY_AREA ...
+#    loading 2 SPECIAL_NETS ...
+#    loading 17379 NETS ...
+#setNanoRouteMode -droute_post_route_spread_wire "auto"
+#setNanoRouteMode -droute_start_iteration 0
+#setNanoRouteMode -route_antenna_cell_name "ANTENNA_X1"
+#setNanoRouteMode -route_insert_antenna_diode true
+#setNanoRouteMode -route_strictly_honor_non_default_rule "false"
+#setNanoRouteMode -route_with_eco true
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 27.95 (MB), peak = 27.95 (MB)
+#Start routing data preparation on Fri May 19 12:52:21 2023
+#
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 1.250.
+#Voltage range [0.000 - 1.250] has 17377 nets.
+#Voltage range [0.950 - 1.250] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Build and mark too close pins for the same net.
+### receiving APA data from server ...
+#Restoring pin access data from file (null) ...
+#Done restoring pin access data
+#Initial pin access analysis.
+#Detail pin access analysis.
+# metal1       H   Track-Pitch = 0.14000    Line-2-Via Pitch = 0.13500
+# metal2       V   Track-Pitch = 0.19000    Line-2-Via Pitch = 0.14000
+# metal3       H   Track-Pitch = 0.14000    Line-2-Via Pitch = 0.14000
+# metal4       V   Track-Pitch = 0.28000    Line-2-Via Pitch = 0.28000
+# metal5       H   Track-Pitch = 0.28000    Line-2-Via Pitch = 0.28000
+# metal6       V   Track-Pitch = 0.28000    Line-2-Via Pitch = 0.28000
+# metal7       H   Track-Pitch = 0.84000    Line-2-Via Pitch = 0.80000
+# metal8       V   Track-Pitch = 0.84000    Line-2-Via Pitch = 0.80000
+# metal9       H   Track-Pitch = 1.60000    Line-2-Via Pitch = 1.60000
+# metal10      V   Track-Pitch = 1.68000    Line-2-Via Pitch = 1.60000
+#Regenerating Ggrids automatically.
+#Auto generating G-grids with size=15 tracks, using layer metal3's pitch = 0.14000.
+#Using automatically generated G-grids.
+#(check_and_prepare_match_target_file) no match_target_file in constraint. quit
+#Done routing data preparation.
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 52.55 (MB), peak = 52.75 (MB)
+### drc_pitch = 5600 ( 2.80000 um) drc_range = 3800 ( 1.90000 um) route_pitch = 3360 ( 1.68000 um) patch_pitch = 7680 ( 3.84000 um) top_route_layer = 10 top_pin_layer = 10
+#build: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 58.30 (MB), peak = 58.30 (MB)
+#
+#Start client routing ...
+#
+#start initial detail routing ...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 58.63 (MB), peak = 80.41 (MB)
+#start 1st optimization iteration ...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 58.63 (MB), peak = 80.41 (MB)
+#Cpu time = 00:00:01
+#Elapsed time = 00:00:01
+#Increased memory = 30.66 (MB)
+#Total memory = 58.61 (MB)
+#Peak memory = 80.41 (MB)
+#
+#Cpu time = 00:00:01
+#Elapsed time = 00:00:05
+#Increased memory = 57.42 (MB)
+#Total memory = 58.60 (MB)
+#Peak memory = 80.41 (MB)
+#Finished client route on Fri May 19 12:52:25 2023
+#

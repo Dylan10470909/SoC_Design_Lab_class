@@ -1,0 +1,162 @@
+
+Design Name
+===========
+    CHIP
+
+Scan Style
+==========
+    muxed_scan
+Design has a valid DFT rule check status
+
+Global Constraints
+==================
+    Minimum number of scan chains: no_value
+    Maximum length of scan chains: no_value
+    Lock-up element type: preferred_level_sensitive
+    Mix clock edges in scan chain: false
+    Prefix for unnamed scan objects: DFT_
+
+Test signal objects
+===================
+    shift_enable: 
+          object name: SCAN_EN 
+          pin name: SCAN_EN 
+          hookup_pin: ipad_SCAN_EN/C 
+          hookup_polarity: non_inverted 
+          function: shift_enable 
+          active: high 
+          ideal: false 
+          user defined: true
+
+    test_mode: 
+          object name: TEST_MODE 
+          pin name: TEST_MODE 
+          hookup_pin: ipad_TEST_MODE/C 
+          hookup_polarity: non_inverted 
+          function: test_mode 
+          active: high 
+          ideal: false 
+          user defined: true
+
+    test_mode: 
+          object name: RESET_ 
+          pin name: RESET_ 
+          hookup_pin: ipad_RESET_/C 
+          hookup_polarity: non_inverted 
+          function: test_mode 
+          active: high 
+          ideal: false 
+          user defined: true
+
+
+Test clock objects
+==================
+    test_clock:
+          object name: CLK 
+          test_clock_domain: DFT_DOMAIN1 
+          user defined: true 
+          source: CLK  
+          root source: CLK  
+          root source polarity: non_inverting
+          hookup_pin: ipad_CLK/C 
+          period: 50000.0
+
+
+DFT controllable objects
+========================
+
+DFT don't scan objects
+======================
+
+DFT abstract don't scan objects
+===============================
+
+DFT scan segment constraints
+============================
+
+DFT scan chain constraints
+==========================
+    User Chain: 
+          object name: scan1 
+          scan-in: X[0] 
+          scan-in hookup_pin: ipad_X0/C
+          scan-out: Z[0] 
+          scan-out hookup_pin: opad_Z0/I
+          shared out: true 
+          shift_enable object name: SCAN_EN 
+          max length: no_value
+          complete: false
+          test_clock domain: DFT_DOMAIN1
+          test_clock edge: any
+
+    User Chain: 
+          object name: scan2 
+          scan-in: X[1] 
+          scan-in hookup_pin: ipad_X1/C
+          scan-out: Z[1] 
+          scan-out hookup_pin: opad_Z1/I
+          shared out: true 
+          shift_enable object name: SCAN_EN 
+          max length: no_value
+          complete: false
+          test_clock domain: DFT_DOMAIN1
+          test_clock edge: any
+
+    User Chain: 
+          object name: scan3 
+          scan-in: X[2] 
+          scan-in hookup_pin: ipad_X2/C
+          scan-out: Z[2] 
+          scan-out hookup_pin: opad_Z2/I
+          shared out: true 
+          shift_enable object name: SCAN_EN 
+          max length: no_value
+          complete: false
+          test_clock domain: DFT_DOMAIN1
+          test_clock edge: any
+
+
+DFT actual scan chains
+======================
+    Actual Chain:
+          object name: scan1 
+          scan-in: X[0] 
+          scan-in hookup_pin: ipad_X0/C 
+          scan-out: Z[0] 
+          scan-out hookup_pin: opad_Z0/I 
+          shared out: true
+          shift_enable: SCAN_EN 
+          length: 1625
+          segment objects: none
+          analyzed: false
+          test_clock domain: DFT_DOMAIN1
+          test_clock edge: rise
+
+    Actual Chain:
+          object name: scan2 
+          scan-in: X[1] 
+          scan-in hookup_pin: ipad_X1/C 
+          scan-out: Z[1] 
+          scan-out hookup_pin: opad_Z1/I 
+          shared out: true
+          shift_enable: SCAN_EN 
+          length: 30
+          segment objects: none
+          analyzed: false
+          test_clock domain: DFT_DOMAIN1
+          test_clock edge: fall
+
+    Actual Chain:
+          object name: scan3 
+          scan-in: X[2] 
+          scan-in hookup_pin: ipad_X2/C 
+          scan-out: Z[2] 
+          scan-out hookup_pin: opad_Z2/I 
+          shared out: true
+          shift_enable: SCAN_EN 
+          length: 1625
+          segment objects: none
+          analyzed: false
+          test_clock domain: DFT_DOMAIN1
+          test_clock edge: rise
+

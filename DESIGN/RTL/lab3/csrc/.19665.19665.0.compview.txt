@@ -1,0 +1,6 @@
+{"vcs1":{"timestamp_begin":1679027197.567257928, "rt":1.76, "ut":0.13, "st":0.05}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1679027196.856354957}
+{"VCS_COMP_START_TIME": 1679027196.856354957}
+{"VCS_COMP_END_TIME": 1679027199.404785683}
+{"VCS_USER_OPTIONS": "-R -debug_pp +vcsd +vpi +memcbk +v2k -v2005 -sverilog -P /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX/novas.tab /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX/pli.a alu.v"}
+{"vcs1": {"peak_mem": 223020}}

@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : alu
+Version: U-2022.12
+Date   : Fri Apr 28 09:41:02 2023
+****************************************
+
+Library(s) Used:
+
+    saed90nm_typ_ht_hvt_ccs (File: /lib/SAED90_EDK/SAED_EDK90nm_ccs_models_hvt/saed90nm_typ_ht_hvt_ccs.db)
+
+Number of ports:                          312
+Number of nets:                          1733
+Number of cells:                         1609
+Number of combinational cells:           1416
+Number of sequential cells:               192
+Number of macros/black boxes:               0
+Number of buf/inv:                        214
+Number of references:                      48
+
+Combinational area:              11607.552122
+Buf/Inv area:                     1268.121627
+Noncombinational area:            6189.465698
+Macro/Black Box area:                0.000000
+Net Interconnect area:            1551.091126
+
+Total cell area:                 17797.017820
+Total area:                      19348.108946
+1

@@ -1,0 +1,62 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : alu
+Version: U-2022.12
+Date   : Fri Apr 14 12:09:27 2023
+****************************************
+
+Operating Conditions: TYPICAL   Library: saed90nm_typ_htl_hvt_ccs
+Wire Load Model Mode: enclosed
+
+  Startpoint: AX0_1st_reg[13]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: AF_1st_reg[3]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  alu                35000                 saed90nm_typ_htl_hvt_ccs
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock CLK (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  AX0_1st_reg[13]/CLK (DFFARX1_HVT)        0.00       0.00 r
+  AX0_1st_reg[13]/QN (DFFARX1_HVT)         0.69       0.69 r
+  U1599/Q (OR2X1_HVT)                      0.34       1.03 r
+  U1557/QN (NAND2X1_HVT)                   0.21       1.24 f
+  U1556/Q (OA21X2_HVT)                     0.54       1.78 f
+  U1426/Q (XOR2X2_HVT)                     0.66       2.45 r
+  U1607/QN (NAND2X1_HVT)                   0.22       2.67 f
+  U852/Q (AO21X1_HVT)                      0.46       3.13 f
+  U2118/QN (AOI21X1_HVT)                   0.56       3.69 r
+  U1708/Q (AND3X1_HVT)                     0.47       4.15 r
+  U2179/Q (AND2X1_HVT)                     0.37       4.52 r
+  U983/QN (NOR2X1_HVT)                     0.24       4.76 f
+  U2740/QN (NOR2X0_HVT)                    0.23       4.99 r
+  U988/Q (OA21X2_HVT)                      0.57       5.56 r
+  U2792/Q (OA22X1_HVT)                     0.39       5.96 r
+  U884/QN (NAND2X1_HVT)                    0.18       6.14 f
+  AF_1st_reg[3]/D (DFFARX1_HVT)            0.03       6.17 f
+  data arrival time                                   6.17
+
+  clock CLK (rise edge)                    2.00       2.00
+  clock network delay (ideal)              0.00       2.00
+  AF_1st_reg[3]/CLK (DFFARX1_HVT)          0.00       2.00 r
+  library setup time                      -0.37       1.63
+  data required time                                  1.63
+  -----------------------------------------------------------
+  data required time                                  1.63
+  data arrival time                                  -6.17
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -4.54
+
+
+1

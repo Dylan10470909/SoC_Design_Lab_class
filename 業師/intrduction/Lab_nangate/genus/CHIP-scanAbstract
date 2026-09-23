@@ -1,0 +1,38 @@
+define_test_bus_port -name SCAN_EN -module CHIP -function shift_enable -default -index 0 SCAN_EN
+define_test_bus_port -name TEST_MODE -module CHIP -function test_mode -index 0 TEST_MODE
+define_test_bus_port -name RESET_ -module CHIP -function test_mode -index 1 RESET_
+ 
+# writing abstract model for 3 scan chains
+ 
+  define_scan_abstract_segment -module CHIP \
+    -name CHIP_scan1 \
+    -sdi X[0] -sdo Z[0] \
+    -shift_enable_port SCAN_EN -active high \
+    -test_mode_port TEST_MODE -test_mode_active high \
+    -test_mode_port RESET_ -test_mode_active high \
+    -clock_port CLK -rise \
+    -tail_clock_port CLK -tail_edge_rise \
+    -tail_inversion \
+    -length 1625 
+ 
+  define_scan_abstract_segment -module CHIP \
+    -name CHIP_scan2 \
+    -sdi X[1] -sdo Z[1] \
+    -shift_enable_port SCAN_EN -active high \
+    -test_mode_port TEST_MODE -test_mode_active high \
+    -test_mode_port RESET_ -test_mode_active high \
+    -clock_port CLK -fall \
+    -tail_clock_port CLK -tail_edge_fall \
+    -length 30 
+ 
+  define_scan_abstract_segment -module CHIP \
+    -name CHIP_scan3 \
+    -sdi X[2] -sdo Z[2] \
+    -shift_enable_port SCAN_EN -active high \
+    -test_mode_port TEST_MODE -test_mode_active high \
+    -test_mode_port RESET_ -test_mode_active high \
+    -clock_port CLK -rise \
+    -tail_clock_port CLK -tail_edge_rise \
+    -tail_inversion \
+    -length 1625 
+ 

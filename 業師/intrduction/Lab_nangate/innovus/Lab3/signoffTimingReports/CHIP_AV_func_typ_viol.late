@@ -1,0 +1,21 @@
+
+in2reg       Pinsname: u_IDCT/tposemem_Bisted_RF_2P_ADV64x16_RF_2P_ADV64x16_u0_SRAM_i0/CLKB, Slack value :2.4344, fromClk:      CLK1, toClk:      CLK1
+
+==========================
+
+GroupType: in2reg, View:AV_func_typ, Setup
+reg2reg       Pinsname: u_IDCT/tposemem_Bisted_RF_2P_ADV64x16_BistCtrl_i0_RC_CG_HIER_INST79/RC_CGIC_INST/E, Slack value :2.7802, fromClk:      CLK1, toClk:      CLK1
+
+==========================
+
+GroupType: reg2cgate, View:AV_func_typ, Setup
+reg2out       Pinsname:                 Z[0], Slack value :2.4078, fromClk:      CLK1, toClk:      CLK1
+
+==========================
+
+GroupType: reg2out, View:AV_func_typ, Setup
+reg2reg       Pinsname: u_IDCT/tposemem_Bisted_RF_2P_ADV64x16_RF_2P_ADV64x16_u0_SRAM_i0/DB[13], Slack value :2.3786, fromClk:      CLK1, toClk:      CLK1
+
+==========================
+
+GroupType: reg2reg, View:AV_func_typ, Setup

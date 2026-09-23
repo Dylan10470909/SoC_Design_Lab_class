@@ -1,0 +1,2 @@
+set_interactive_constraint_modes [all_constraint_modes]
+reset_clock_tree_latency [all_clocks]

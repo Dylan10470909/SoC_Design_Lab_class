@@ -1,0 +1,52 @@
+
+
+Working Directory = /user/DSD/nschang/work/class/innovus/Lab_nangate/genus
+QoS Summary for CHIP
+========================================================================================================================
+Metric                          initial         generic         map             syn_opt         syn_opt_low_incr final          
+========================================================================================================================
+Slack (ps):                    -7,020          -7,074          -7,093          -7,093          -7,093          -7,093
+  R2R (ps):                       324             823               2               0               0               0
+  I2R (ps):                    -7,020          -7,074          -7,093          -7,093          -7,093          -7,093
+  R2O (ps):                     4,204           4,205           2,572           2,572           2,494           2,494
+  I2O (ps):                  no_value        no_value        no_value        no_value        no_value        no_value
+  CG  (ps):                  no_value           2,670           2,421           2,169           2,169           2,169
+TNS (ps):                     144,269         131,667         131,242         131,234         131,236         131,236
+  R2R (ps):                         0               0               0               0               0               0
+  I2R (ps):                   144,269         131,667         131,242         131,234         131,236         131,236
+  R2O (ps):                         0               0               0               0               0               0
+  I2O (ps):                  no_value        no_value        no_value        no_value        no_value        no_value
+  CG  (ps):                  no_value               0               0               0               0               0
+Failing Paths:                     21              19              19              19              19              19
+Leakage Power (nW):         1,975,570       1,762,419       1,682,248       1,650,732       1,649,764       1,649,764
+Cell Area:                    188,296         188,619         224,313         222,082         222,082         222,082
+Total Cell Area:              188,296         188,619         224,313         222,082         222,082         222,082
+Leaf Instances:                37,299          43,739          13,349          10,785          10,792          10,792
+Total Instances:               37,299          43,739          13,349          10,785          10,792          10,792
+Utilization (%):                 0.00            0.00            0.00            0.00            0.00            0.00
+Tot. Net Length (um):        no_value        no_value        no_value        no_value        no_value        no_value
+Avg. Net Length (um):        no_value        no_value        no_value        no_value        no_value        no_value
+Route Overflow H (%):        no_value        no_value        no_value        no_value        no_value        no_value
+Route Overflow V (%):        no_value        no_value        no_value        no_value        no_value        no_value
+MBCI(%) (bits/gate) :            0.00            0.00            0.00            0.00            0.00            0.00
+Norm Cong Hotspot Area:
+  Max Cong:                  no_value        no_value        no_value        no_value        no_value        no_value
+  Tot Cong:                  no_value        no_value        no_value        no_value        no_value        no_value
+========================================================================================================================
+CPU  Runtime (h:m:s):        00:00:11        00:02:11        00:01:56        00:00:41        00:00:25        00:00:10
+Real Runtime (h:m:s):        00:00:08        00:02:46        00:02:03        00:00:34        00:00:21        00:00:10
+CPU  Elapsed (h:m:s):        00:00:15        00:02:26        00:04:22        00:05:03        00:05:28        00:05:38
+Real Elapsed (h:m:s):        00:00:09        00:02:55        00:04:58        00:05:32        00:05:53        00:06:03
+Memory (MB):                   936.05          887.16          957.77          885.75          890.39          895.39
+========================================================================================================================
+========================================================================================================================
+Flow Settings:
+========================================================================================================================
+Total Runtime (h:m:s): 00:06:05
+Total Memory (MB):     895.39
+Executable Version:    19.10-p002_1
+========================================================================================================================
+Total Cell Area =  Cell Area + Physical Cell Area
+Total Instances =  Leaf Instances + Physical Instances
+
+

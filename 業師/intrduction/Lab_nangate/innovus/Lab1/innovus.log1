@@ -1,0 +1,1097 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.13-s100_1, built Fri Mar 4 14:32:31 PST 2022
+Options:	
+Date:		Fri May 12 11:25:44 2023
+Host:		f453_server (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (12cores*48cpus*Intel(R) Xeon(R) CPU E5-2690 v3 @ 2.60GHz 30720KB)
+OS:		CentOS Linux release 7.9.2009 (Core)
+
+License:
+		[11:25:44.175499] Configured Lic search path (20.02-s004): 5280@lstn:26585@lstn:
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+**WARN: (IMPOPT-801):	Genus executable not found in PATH. Install Genus, add the path to the genus executable in the PATH variable and rerun Innovus.
+Change the soft stacksize limit to 0.2%RAM (257 mbytes). Set global soft_stack_size_limit to change the value.
+Sourcing startup file ./enc.tcl
+<CMD> setLibraryUnit -cap 1pf
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> win
+<CMD> set ::TimeLib::tsgMarkCellLatchConstructFlag 1
+<CMD> set defHierChar /
+<CMD> set distributed_client_message_echo 1
+<CMD> set distributed_mmmc_disable_reports_auto_redirection 0
+<CMD> set eco_post_client_restore_command {update_timing ; write_eco_opt_db ;}
+<CMD> set enc_enable_print_mode_command_reset_options 1
+<CMD> set init_gnd_net VSS
+<CMD> set init_lef_file {../../library/lef/NangateOpenCellLibrary.tech.lef ../../library/lef/NangateOpenCellLibrary.macro.lef ../../library/lef/tpz.lef ../../library/memory/rf_2p_hse.lef}
+<CMD> set init_mmmc_file mmmc.view
+<CMD> set init_oa_search_lib {}
+<CMD> set init_pwr_net VDD
+<CMD> set init_top_cell CHIP
+<CMD> set init_verilog ../../design/CHIP_syn.v
+<CMD> get_message -id GLOBAL-100 -suppress
+<CMD> get_message -id GLOBAL-100 -suppress
+<CMD> set latch_time_borrow_mode max_borrow
+<CMD> set pegDefaultResScaleFactor 1
+<CMD> set pegDetailResScaleFactor 1
+<CMD> get_message -id GLOBAL-100 -suppress
+<CMD> get_message -id GLOBAL-100 -suppress
+<CMD> set report_inactive_arcs_format {from to when arc_type sense reason}
+<CMD> set soft_stack_size_limit 1550
+<CMD> set tso_post_client_restore_command {update_timing ; write_eco_opt_db ;}
+<CMD> init_design
+#% Begin Load MMMC data ... (date=05/12 11:26:25, mem=816.0M)
+#% End Load MMMC data ... (date=05/12 11:26:25, total cpu=0:00:00.0, real=0:00:00.0, peak res=816.4M, current mem=816.4M)
+RC_typ RC_best RC_worst
+
+Loading LEF file ../../library/lef/NangateOpenCellLibrary.tech.lef ...
+
+Loading LEF file ../../library/lef/NangateOpenCellLibrary.macro.lef ...
+Set DBUPerIGU to M2 pitch 380.
+
+Loading LEF file ../../library/lef/tpz.lef ...
+WARNING (LEFPARS-2001): No VERSION statement found, using the default value 5.8. See file ../../library/lef/tpz.lef at line 703.
+
+Loading LEF file ../../library/memory/rf_2p_hse.lef ...
+
+viaInitial starts at Fri May 12 11:26:25 2023
+viaInitial ends at Fri May 12 11:26:25 2023
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Loading view definition file from mmmc.view
+Reading lib_max timing library '/home/111-2/C108110249/lab1/Lab_nangate/library/lib/NangateOpenCellLibrary_slow.lib' ...
+Read 134 cells in library 'NangateOpenCellLibrary' 
+Reading lib_max timing library '/home/111-2/C108110249/lab1/Lab_nangate/library/memory/rf_2p_hse_nldm_ss_0p81v_0p81v_125c_syn.lib' ...
+Read 1 cells in library 'USERLIB_nldm_ss_0p81v_0p81v_125c' 
+Reading lib_max timing library '/home/111-2/C108110249/lab1/Lab_nangate/library/lib/tpz_slow.lib' ...
+Read 9 cells in library 'io_worst' 
+Reading lib_min timing library '/home/111-2/C108110249/lab1/Lab_nangate/library/lib/NangateOpenCellLibrary_fast.lib' ...
+Read 134 cells in library 'NangateOpenCellLibrary' 
+Reading lib_min timing library '/home/111-2/C108110249/lab1/Lab_nangate/library/memory/rf_2p_hse_nldm_ff_0p99v_0p99v_m40c_syn.lib' ...
+Read 1 cells in library 'USERLIB_nldm_ff_0p99v_0p99v_m40c' 
+Reading lib_min timing library '/home/111-2/C108110249/lab1/Lab_nangate/library/lib/tpz_fast.lib' ...
+Read 9 cells in library 'io_best' 
+*** End library_loading (cpu=0.02min, real=0.02min, mem=13.0M, fe_cpu=0.39min, fe_real=0.70min, fe_mem=1031.4M) ***
+#% Begin Load netlist data ... (date=05/12 11:26:26, mem=829.6M)
+*** Begin netlist parsing (mem=1031.4M) ***
+Pin 'VSS' of cell 'PADVSS' is declared as power/ground in LEF but as signal in timing library.  Treat it as power/ground.
+Pin 'VDD' of cell 'PADVDD' is declared as power/ground in LEF but as signal in timing library.  Treat it as power/ground.
+Created 144 new cells from 6 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist '../../design/CHIP_syn.v'
+
+*** Memory Usage v#1 (Current mem = 1035.375M, initial mem = 387.332M) ***
+*** End netlist parsing (cpu=0:00:00.1, real=0:00:00.0, mem=1035.4M) ***
+#% End Load netlist data ... (date=05/12 11:26:26, total cpu=0:00:00.1, real=0:00:00.0, peak res=839.6M, current mem=839.6M)
+Set top cell to CHIP.
+Hooked 288 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell CHIP ...
+*** Netlist is unique.
+** info: there are 780 modules.
+** info: there are 10759 stdCell insts.
+** info: there are 31 Pad insts.
+** info: there are 2 macros.
+
+*** Memory Usage v#1 (Current mem = 1104.301M, initial mem = 387.332M) ***
+Initializing I/O assignment ...
+**WARN: (IMPFP-3961):	The techSite 'rf_2p_hse' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'pad' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+Extraction setup Started 
+Initializing multi-corner RC extraction with 3 active RC Corners ...
+**WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for preRoute and postRoute extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for preRoute and postRoute (effort level medium/high/signoff) extraction engines.
+Type 'man IMPEXT-6202' for more detail.
+Reading Capacitance Table File ../../library/fireice/worst.captbl ...
+Cap table was created using Encounter 13.13-s017_1.
+Process name: FreePDK45.
+Reading Capacitance Table File ../../library/fireice/typical.captbl ...
+Cap table was created using Encounter 13.13-s017_1.
+Process name: FreePDK45.
+Reading Capacitance Table File ../../library/fireice/best.captbl ...
+Cap table was created using Encounter 13.13-s017_1.
+Process name: FreePDK45.
+Importing multi-corner RC tables ... 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: AV_func_max
+    RC-Corner Name        : RC_worst
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '../../library/fireice/worst.captbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '../../library/fireice/worst.tch'
+ 
+ Analysis View: AV_func_typ
+    RC-Corner Name        : RC_typ
+    RC-Corner Index       : 1
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '../../library/fireice/typical.captbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '../../library/fireice/typical.tch'
+ 
+ Analysis View: AV_scan_max
+    RC-Corner Name        : RC_worst
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '../../library/fireice/worst.captbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '../../library/fireice/worst.tch'
+ 
+ Analysis View: AV_scan_typ
+    RC-Corner Name        : RC_typ
+    RC-Corner Index       : 1
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '../../library/fireice/typical.captbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '../../library/fireice/typical.tch'
+ 
+ Analysis View: AV_func_min
+    RC-Corner Name        : RC_best
+    RC-Corner Index       : 2
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '../../library/fireice/best.captbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '../../library/fireice/best.tch'
+ 
+ Analysis View: AV_scan_min
+    RC-Corner Name        : RC_best
+    RC-Corner Index       : 2
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '../../library/fireice/best.captbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '../../library/fireice/best.tch'
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+*Info: initialize multi-corner CTS.
+Reading lib_typ timing library '/home/111-2/C108110249/lab1/Lab_nangate/library/lib/NangateOpenCellLibrary_typical.lib' ...
+Read 134 cells in library 'NangateOpenCellLibrary' 
+Reading lib_typ timing library '/home/111-2/C108110249/lab1/Lab_nangate/library/memory/rf_2p_hse_nldm_tt_0p90v_0p90v_25c_syn.lib' ...
+Read 1 cells in library 'USERLIB_nldm_tt_0p90v_0p90v_25c' 
+Reading lib_typ timing library '/home/111-2/C108110249/lab1/Lab_nangate/library/lib/tpz_typ.lib' ...
+Read 9 cells in library 'io_typ' 
+Reading timing constraints file '../../design/CHIP_func.sdc' ...
+Current (total cpu=0:00:24.8, real=0:00:44.0, peak res=1136.1M, current mem=1136.1M)
+CHIP
+INFO (CTE): Constraints read successfully.
+Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1154.2M, current mem=1154.2M)
+Current (total cpu=0:00:24.9, real=0:00:44.0, peak res=1154.2M, current mem=1154.2M)
+Reading timing constraints file '../../design/CHIP_scan.sdc' ...
+Current (total cpu=0:00:24.9, real=0:00:44.0, peak res=1154.2M, current mem=1154.2M)
+CHIP
+INFO (CTE): Constraints read successfully.
+Ending "Constraint file reading stats" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1154.5M, current mem=1154.5M)
+Current (total cpu=0:00:24.9, real=0:00:44.0, peak res=1154.5M, current mem=1154.5M)
+Total number of combinational cells: 99
+Total number of sequential cells: 29
+Total number of tristate cells: 6
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: BUF_X1 BUF_X2 BUF_X4 BUF_X8 BUF_X16 BUF_X32 CLKBUF_X1 CLKBUF_X2 CLKBUF_X3
+Total number of usable buffers: 9
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: INV_X1 INV_X2 INV_X4 INV_X8 INV_X16 INV_X32
+Total number of usable inverters: 6
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells:
+Total number of identified usable delay cells: 0
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+No delay cells were detected in the set of buffers. Buffers will be used to fix hold violations.
+AV_func_max AV_scan_typ AV_scan_min AV_scan_max AV_func_typ AV_func_min
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPFP-3961           3  The techSite '%s' has no related standar...
+WARNING   IMPEXT-6202          1  In addition to the technology file, the ...
+*** Message Summary: 4 warning(s), 0 error(s)
+
+<CMD> fit
+<CMD> fit
+<CMD> fit
+<CMD> fit
+<CMD> loadIoFile ../../design/CHIP.io
+Reading IO assignment file "../../design/CHIP.io" ...
+Start create_tracks
+<CMD> fit
+wrong # args: should be "set varName ?newValue?"
+<CMD> setDesignMode -process 45
+##  Process: 45            (User Set)               
+##     Node: (not set)                           
+
+##  Check design process and node:  
+##  Design tech node is not set.
+
+Applying the recommended capacitance filtering threshold values for 45nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.1.
+	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
+	The accuracy mode for postRoute effortLevel low extraction will be set to 'high'.
+	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode is 'medium'.
+**ERROR: (IMPSYT-16175):	<To Global Net> field must be specified.
+**ERROR: (IMPSYT-16175):	<To Global Net> field must be specified.
+<CMD> clearGlobalNets
+<CMD> globalNetConnect VDD -type pgpin -pin VDD -instanceBasename *
+<CMD> globalNetConnect VDD -type pgpin -pin VDDPE -instanceBasename *
+<CMD> globalNetConnect VDD -type pgpin -pin VDDCE -instanceBasename *
+<CMD> globalNetConnect VSS -type pgpin -pin VSS -instanceBasename *
+<CMD> globalNetConnect VSS -type pgpin -pin VSSE -instanceBasename *
+<CMD> globalNetConnect VDD -type tiehi -instanceBasename *
+<CMD> globalNetConnect VSS -type tielo -instanceBasename *
+<CMD> clearGlobalNets
+<CMD> globalNetConnect VDD -type pgpin -pin VDD -instanceBasename *
+<CMD> globalNetConnect VDD -type pgpin -pin VDDPE -instanceBasename *
+<CMD> globalNetConnect VDD -type pgpin -pin VDDCE -instanceBasename *
+<CMD> globalNetConnect VSS -type pgpin -pin VSS -instanceBasename *
+<CMD> globalNetConnect VSS -type pgpin -pin VSSE -instanceBasename *
+<CMD> globalNetConnect VDD -type tiehi -instanceBasename *
+<CMD> globalNetConnect VSS -type tielo -instanceBasename *
+<CMD> clearGlobalNets
+<CMD> globalNetConnect VDD -type pgpin -pin VDD -instanceBasename *
+<CMD> globalNetConnect VDD -type pgpin -pin VDDPE -instanceBasename *
+<CMD> globalNetConnect VDD -type pgpin -pin VDDCE -instanceBasename *
+<CMD> globalNetConnect VSS -type pgpin -pin VSS -instanceBasename *
+<CMD> globalNetConnect VSS -type pgpin -pin VSSE -instanceBasename *
+<CMD> globalNetConnect VDD -type tiehi -instanceBasename *
+<CMD> globalNetConnect VSS -type tielo -instanceBasename *
+<CMD> saveDesign DBS/init.enc
+#% Begin save design ... (date=05/12 11:32:15, mem=1362.5M)
+% Begin Save ccopt configuration ... (date=05/12 11:32:15, mem=1362.5M)
+% End Save ccopt configuration ... (date=05/12 11:32:15, total cpu=0:00:00.0, real=0:00:00.0, peak res=1363.5M, current mem=1363.5M)
+% Begin Save netlist data ... (date=05/12 11:32:15, mem=1363.5M)
+Writing Binary DB to DBS/init.enc.dat/CHIP.v.bin in single-threaded mode...
+% End Save netlist data ... (date=05/12 11:32:15, total cpu=0:00:00.0, real=0:00:00.0, peak res=1368.8M, current mem=1363.6M)
+Saving symbol-table file ...
+Saving congestion map file DBS/init.enc.dat/CHIP.route.congmap.gz ...
+% Begin Save AAE data ... (date=05/12 11:32:15, mem=1364.4M)
+Saving AAE Data ...
+% End Save AAE data ... (date=05/12 11:32:15, total cpu=0:00:00.0, real=0:00:00.0, peak res=1364.4M, current mem=1364.4M)
+Saving preference file DBS/init.enc.dat/gui.pref.tcl ...
+Saving mode setting ...
+Saving global file ...
+% Begin Save floorplan data ... (date=05/12 11:32:16, mem=1367.5M)
+Saving floorplan file ...
+% End Save floorplan data ... (date=05/12 11:32:16, total cpu=0:00:00.0, real=0:00:00.0, peak res=1368.1M, current mem=1368.1M)
+Saving PG file DBS/init.enc.dat/CHIP.pg.gz, version#2, (Created by Innovus v21.13-s100_1 on Fri May 12 11:32:16 2023)
+*** Completed savePGFile (cpu=0:00:00.0 real=0:00:00.0 mem=1895.6M) ***
+Saving Drc markers ...
+... No Drc file written since there is no markers found.
+% Begin Save placement data ... (date=05/12 11:32:16, mem=1368.4M)
+** Saving stdCellPlacement_binary (version# 2) ...
+Save Adaptive View Pruning View Names to Binary file
+% End Save placement data ... (date=05/12 11:32:16, total cpu=0:00:00.0, real=0:00:00.0, peak res=1368.5M, current mem=1368.5M)
+% Begin Save routing data ... (date=05/12 11:32:16, mem=1368.5M)
+Saving route file ...
+*** Completed saveRoute (cpu=0:00:00.0 real=0:00:01.0 mem=1895.6M) ***
+% End Save routing data ... (date=05/12 11:32:17, total cpu=0:00:00.1, real=0:00:01.0, peak res=1368.8M, current mem=1368.8M)
+Saving property file DBS/init.enc.dat/CHIP.prop
+*** Completed saveProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1898.6M) ***
+% Begin Save power constraints data ... (date=05/12 11:32:17, mem=1369.3M)
+% End Save power constraints data ... (date=05/12 11:32:17, total cpu=0:00:00.0, real=0:00:00.0, peak res=1369.4M, current mem=1369.4M)
+RC_typ RC_best RC_worst
+RC_typ RC_best RC_worst
+RC_typ RC_best RC_worst
+RC_typ RC_best RC_worst
+RC_typ RC_best RC_worst
+RC_typ RC_best RC_worst
+RC_typ RC_best RC_worst
+Generated self-contained design init.enc.dat
+#% End save design ... (date=05/12 11:32:17, total cpu=0:00:00.7, real=0:00:02.0, peak res=1398.3M, current mem=1372.3M)
+*** Message Summary: 0 warning(s), 0 error(s)
+
+<CMD> defIn ../../design/CHIP-scan.def
+Reading DEF file '../../design/CHIP-scan.def', current time is Fri May 12 11:32:29 2023 ...
+--- CASESENSITIVE ON
+--- DIVIDERCHAR '/'
+DEF file '../../design/CHIP-scan.def' is parsed, current time is Fri May 12 11:32:29 2023.
+<CMD> fit
+<CMD> scanTrace
+*** Scan Trace Summary (runtime: cpu: 0:00:00.0 , real: 0:00:00.0): 
+Successfully traced 3 scan chains (total 3277 scan bits).
+Start applying DEF ordered sections ...
+Successfully applied all DEF ordered sections.
+*** Scan Sanity Check Summary:
+*** 3 scan chains passed sanity check.
+<CMD> saveDesign DBS/init.enc
+#% Begin save design ... (date=05/12 11:33:03, mem=1373.8M)
+% Begin Save ccopt configuration ... (date=05/12 11:33:03, mem=1373.8M)
+% End Save ccopt configuration ... (date=05/12 11:33:03, total cpu=0:00:00.0, real=0:00:00.0, peak res=1373.8M, current mem=1373.8M)
+% Begin Save netlist data ... (date=05/12 11:33:03, mem=1373.8M)
+Writing Binary DB to DBS/init.enc.dat.tmp/CHIP.v.bin in single-threaded mode...
+% End Save netlist data ... (date=05/12 11:33:03, total cpu=0:00:00.0, real=0:00:00.0, peak res=1373.9M, current mem=1373.9M)
+Saving symbol-table file ...
+Saving congestion map file DBS/init.enc.dat.tmp/CHIP.route.congmap.gz ...
+% Begin Save AAE data ... (date=05/12 11:33:03, mem=1374.0M)
+Saving AAE Data ...
+% End Save AAE data ... (date=05/12 11:33:03, total cpu=0:00:00.0, real=0:00:00.0, peak res=1374.0M, current mem=1374.0M)
+Saving preference file DBS/init.enc.dat.tmp/gui.pref.tcl ...
+Saving mode setting ...
+Saving global file ...
+% Begin Save floorplan data ... (date=05/12 11:33:04, mem=1374.2M)
+Saving floorplan file ...
+% End Save floorplan data ... (date=05/12 11:33:04, total cpu=0:00:00.0, real=0:00:00.0, peak res=1374.2M, current mem=1374.2M)
+Saving PG file DBS/init.enc.dat.tmp/CHIP.pg.gz, version#2, (Created by Innovus v21.13-s100_1 on Fri May 12 11:33:04 2023)
+*** Completed savePGFile (cpu=0:00:00.0 real=0:00:00.0 mem=1934.6M) ***
+Saving Drc markers ...
+... No Drc file written since there is no markers found.
+% Begin Save placement data ... (date=05/12 11:33:04, mem=1374.5M)
+** Saving stdCellPlacement_binary (version# 2) ...
+Save Adaptive View Pruning View Names to Binary file
+% End Save placement data ... (date=05/12 11:33:04, total cpu=0:00:00.0, real=0:00:00.0, peak res=1374.5M, current mem=1374.5M)
+% Begin Save routing data ... (date=05/12 11:33:04, mem=1374.5M)
+Saving route file ...
+*** Completed saveRoute (cpu=0:00:00.0 real=0:00:00.0 mem=1934.6M) ***
+% End Save routing data ... (date=05/12 11:33:04, total cpu=0:00:00.0, real=0:00:00.0, peak res=1374.7M, current mem=1374.7M)
+Saving SCANDEF file ...
+*** Scan Trace Summary (runtime: cpu: 0:00:00.0 , real: 0:00:00.0): 
+Successfully traced 3 scan chains (total 3277 scan bits).
+Start applying DEF ordered sections ...
+Successfully applied all DEF ordered sections.
+*** Scan Sanity Check Summary:
+*** 3 scan chains passed sanity check.
+Saving property file DBS/init.enc.dat.tmp/CHIP.prop
+*** Completed saveProperty (cpu=0:00:00.0 real=0:00:00.0 mem=2126.6M) ***
+% Begin Save power constraints data ... (date=05/12 11:33:05, mem=1374.7M)
+% End Save power constraints data ... (date=05/12 11:33:05, total cpu=0:00:00.0, real=0:00:00.0, peak res=1374.7M, current mem=1374.7M)
+RC_typ RC_best RC_worst
+RC_typ RC_best RC_worst
+RC_typ RC_best RC_worst
+RC_typ RC_best RC_worst
+RC_typ RC_best RC_worst
+RC_typ RC_best RC_worst
+RC_typ RC_best RC_worst
+Generated self-contained design init.enc.dat.tmp
+#% End save design ... (date=05/12 11:33:05, total cpu=0:00:00.7, real=0:00:02.0, peak res=1404.5M, current mem=1375.0M)
+*** Message Summary: 0 warning(s), 0 error(s)
+
+<CMD> saveDesign DBS/init.enc
+#% Begin save design ... (date=05/12 11:33:05, mem=1375.0M)
+% Begin Save ccopt configuration ... (date=05/12 11:33:05, mem=1375.0M)
+% End Save ccopt configuration ... (date=05/12 11:33:05, total cpu=0:00:00.0, real=0:00:00.0, peak res=1375.0M, current mem=1375.0M)
+% Begin Save netlist data ... (date=05/12 11:33:05, mem=1375.0M)
+Writing Binary DB to DBS/init.enc.dat.tmp/CHIP.v.bin in single-threaded mode...
+% End Save netlist data ... (date=05/12 11:33:05, total cpu=0:00:00.0, real=0:00:00.0, peak res=1375.0M, current mem=1375.0M)
+Saving symbol-table file ...
+Saving congestion map file DBS/init.enc.dat.tmp/CHIP.route.congmap.gz ...
+% Begin Save AAE data ... (date=05/12 11:33:06, mem=1375.0M)
+Saving AAE Data ...
+% End Save AAE data ... (date=05/12 11:33:06, total cpu=0:00:00.0, real=0:00:00.0, peak res=1375.0M, current mem=1375.0M)
+Saving preference file DBS/init.enc.dat.tmp/gui.pref.tcl ...
+Saving mode setting ...
+Saving global file ...
+% Begin Save floorplan data ... (date=05/12 11:33:06, mem=1375.0M)
+Saving floorplan file ...
+% End Save floorplan data ... (date=05/12 11:33:06, total cpu=0:00:00.1, real=0:00:00.0, peak res=1375.0M, current mem=1375.0M)
+Saving PG file DBS/init.enc.dat.tmp/CHIP.pg.gz, version#2, (Created by Innovus v21.13-s100_1 on Fri May 12 11:33:06 2023)
+*** Completed savePGFile (cpu=0:00:00.0 real=0:00:00.0 mem=1947.2M) ***
+Saving Drc markers ...
+... No Drc file written since there is no markers found.
+% Begin Save placement data ... (date=05/12 11:33:06, mem=1375.1M)
+** Saving stdCellPlacement_binary (version# 2) ...
+Save Adaptive View Pruning View Names to Binary file
+% End Save placement data ... (date=05/12 11:33:06, total cpu=0:00:00.0, real=0:00:00.0, peak res=1375.1M, current mem=1375.1M)
+% Begin Save routing data ... (date=05/12 11:33:06, mem=1375.1M)
+Saving route file ...
+*** Completed saveRoute (cpu=0:00:00.0 real=0:00:01.0 mem=1947.2M) ***
+% End Save routing data ... (date=05/12 11:33:07, total cpu=0:00:00.0, real=0:00:01.0, peak res=1375.1M, current mem=1375.1M)
+Saving SCANDEF file ...
+*** Scan Trace Summary (runtime: cpu: 0:00:00.0 , real: 0:00:00.0): 
+Successfully traced 3 scan chains (total 3277 scan bits).
+Start applying DEF ordered sections ...
+Successfully applied all DEF ordered sections.
+*** Scan Sanity Check Summary:
+*** 3 scan chains passed sanity check.
+Saving property file DBS/init.enc.dat.tmp/CHIP.prop
+*** Completed saveProperty (cpu=0:00:00.0 real=0:00:00.0 mem=2139.2M) ***
+% Begin Save power constraints data ... (date=05/12 11:33:07, mem=1375.1M)
+% End Save power constraints data ... (date=05/12 11:33:07, total cpu=0:00:00.0, real=0:00:00.0, peak res=1375.1M, current mem=1375.1M)
+RC_typ RC_best RC_worst
+RC_typ RC_best RC_worst
+RC_typ RC_best RC_worst
+RC_typ RC_best RC_worst
+RC_typ RC_best RC_worst
+RC_typ RC_best RC_worst
+RC_typ RC_best RC_worst
+Generated self-contained design init.enc.dat.tmp
+#% End save design ... (date=05/12 11:33:07, total cpu=0:00:00.7, real=0:00:02.0, peak res=1405.8M, current mem=1375.1M)
+*** Message Summary: 0 warning(s), 0 error(s)
+
+<CMD> checkDesign -io -netlist -physicalLibrary -powerGround -tieHilo -timingLibrary -spef -floorplan -place -outdir checkDesign
+Creating directory checkDesign.
+**WARN: (IMPREPO-205):	There are 15 Cells with missing PG PIN.
+**ERROR: (IMPSP-365):	Design has inst(s) with SITE 'rf_2p_hse', but the floorplan has no rows defined for this site. Any locations found for such insts will be illegal; create rows for this site to avoid this.
+Type 'man IMPSP-365' for more detail.
+Estimated cell power/ground rail width = 0.175 um
+Begin checking placement ... (start mem=1951.3M, init mem=1952.2M)
+*info: Recommended don't use cell = 0           
+*info: Placed = 0             
+*info: Unplaced = 10761        (BLOCKS = 2)
+Placement Density:64.35%(41124/63910)
+Placement Density (including fixed std cells):64.35%(41124/63910)
+Finished checkPlace (total: cpu=0:00:00.0, real=0:00:00.0; vio checks: cpu=0:00:00.0, real=0:00:00.0; mem=1952.2M)
+############################################################################
+# Innovus Netlist Design Rule Check
+# Fri May 12 11:33:15 2023
+############################################################################
+Design: CHIP
+
+------ Design Summary:
+Total Standard Cell Number   (cells) : 10759
+Total Block Cell Number      (cells) : 2
+Total I/O Pad Cell Number    (cells) : 56
+Total Standard Cell Area     ( um^2) : 33786.52
+Total Block Cell Area        ( um^2) : 7337.36
+Total I/O Pad Cell Area      ( um^2) : 462744.24
+
+------ Design Statistics:
+
+Number of Instances            : 10817
+Number of Non-uniquified Insts : 10806
+Number of Nets                 : 17172
+Average number of Pins per Net : 2.79
+Maximum number of Pins in Net  : 3285
+
+------ I/O Port summary
+
+Number of Primary I/O Ports    : 31
+Number of Input Ports          : 19
+Number of Output Ports         : 12
+Number of Bidirectional Ports  : 0
+Number of Power/Ground Ports   : 0
+Number of Floating Ports                     *: 0
+Number of Ports Connected to Multiple Pads   *: 0
+Number of Ports Connected to Core Instances   : 0
+
+------ Design Rule Checking:
+
+Number of Output Pins connect to Power/Ground *: 0
+Number of Insts with Input Pins tied together ?: 7
+Number of TieHi/Lo term nets not connected to instance's PG terms ?: 0
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_IOVDD6' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VSSIO' of Io  instance 'pad_IOVSS6' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_IOVDD5' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VSSIO' of Io  instance 'pad_IOVSS5' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_IOVDD4' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VSSIO' of Io  instance 'pad_IOVSS4' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_IOVDD3' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VSSIO' of Io  instance 'pad_IOVSS3' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_IOVDD2' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VSSIO' of Io  instance 'pad_IOVSS2' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VSSIO' of Io  instance 'pad_IOVSS1' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_IOVDD1' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_POC' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_IOVDD7' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VSSIO' of Io  instance 'pad_IOVSS8' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+Number of Input/InOut Floating Pins            : 15
+Number of Output Floating Pins                 : 0
+Number of Output Term Marked TieHi/Lo         *: 0
+
+**WARN: (IMPREPO-216):	There are 7 Instances with input pins tied together.
+**WARN: (IMPREPO-218):	There are 15 Floating Instance terminals.
+Number of nets with tri-state drivers          : 0
+Number of nets with parallel drivers           : 0
+Number of nets with multiple drivers           : 0
+Number of nets with no driver (No FanIn)       : 0
+Number of Output Floating nets (No FanOut)     : 801
+Number of High Fanout nets (>50)               : 18
+**WARN: (IMPREPO-227):	There are 18 High Fanout nets (>50).
+**WARN: (IMPREPO-231):	Input netlist has a cell 'rf_2p_hse' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'rf_2p_hse' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (EMS-27):	Message (IMPREPO-231) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+
+# Number of cells of input netlist marked dont_use = 58.
+
+Checking routing tracks.....
+Checking other grids.....
+**ERROR: (IMPFP-3953):	The user grid is not a multiple of manufacturing grid. You can specfiy the user-defined grid in the Preferences - Floorplan form in the Options menu.
+**ERROR: (IMPFP-3953):	The user grid is not a multiple of manufacturing grid. You can specfiy the user-defined grid in the Preferences - Floorplan form in the Options menu.
+**ERROR: (IMPFP-3971):	The GCell Grid (710.607 0) is not on manufacturing grid.
+Type 'man IMPFP-3971' for more detail.
+**ERROR: (IMPFP-3971):	The GCell Grid (-68.7725 0) is not on manufacturing grid.
+Type 'man IMPFP-3971' for more detail.
+Checking routing blockage.....
+Checking components.....
+**ERROR: (IMPFP-3975):	Instance ipad_CLK not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_DoDCT not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_HALT not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_Mode not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_RESET_ not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_SCAN_EN not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_TEST_MODE not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_X0 not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_X1 not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_X2 not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_X3 not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_X4 not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_X5 not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_X6 not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_X7 not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_X8 not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_X9 not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_X10 not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_X11 not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance opad_Z0 not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**WARN: (EMS-27):	Message (IMPFP-3975) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+Checking constraints (guide/region/fence).....
+Checking groups.....
+Checking Ptn Core Box.....
+
+Checking Preroutes.....
+No. of regular pre-routes not on tracks : 0 
+ Design check done.
+Report saved in file checkDesign/CHIP.main.htm.ascii
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+ERROR     IMPFP-3953           2  The user grid is not a multiple of manuf...
+ERROR     IMPFP-3971           2  The GCell Grid (%g %g) is not on manufac...
+ERROR     IMPFP-3975          56  Instance %s not on manufacturing grid. I...
+WARNING   IMPDB-2136          15  %s term '%s' of %s instance '%s' does no...
+ERROR     IMPSP-365            1  Design has inst(s) with SITE '%s', but t...
+WARNING   IMPREPO-227          1  There are %d High Fanout nets (>50).     
+WARNING   IMPREPO-231         58  Input netlist has a cell '%s' which is m...
+WARNING   IMPREPO-205          1  There are %d Cells with missing PG PIN.  
+WARNING   IMPREPO-216          1  There are %d Instances with input pins t...
+WARNING   IMPREPO-218          1  There are %d Floating Instance terminals...
+*** Message Summary: 77 warning(s), 61 error(s)
+
+<CMD> checkDesign -io -netlist -physicalLibrary -powerGround -tieHilo -timingLibrary -spef -floorplan -outdir checkDesign
+**WARN: (IMPREPO-205):	There are 15 Cells with missing PG PIN.
+############################################################################
+# Innovus Netlist Design Rule Check
+# Fri May 12 11:33:25 2023
+############################################################################
+Design: CHIP
+
+------ Design Summary:
+Total Standard Cell Number   (cells) : 10759
+Total Block Cell Number      (cells) : 2
+Total I/O Pad Cell Number    (cells) : 56
+Total Standard Cell Area     ( um^2) : 33786.52
+Total Block Cell Area        ( um^2) : 7337.36
+Total I/O Pad Cell Area      ( um^2) : 462744.24
+
+------ Design Statistics:
+
+Number of Instances            : 10817
+Number of Non-uniquified Insts : 10806
+Number of Nets                 : 17172
+Average number of Pins per Net : 2.79
+Maximum number of Pins in Net  : 3285
+
+------ I/O Port summary
+
+Number of Primary I/O Ports    : 31
+Number of Input Ports          : 19
+Number of Output Ports         : 12
+Number of Bidirectional Ports  : 0
+Number of Power/Ground Ports   : 0
+Number of Floating Ports                     *: 0
+Number of Ports Connected to Multiple Pads   *: 0
+Number of Ports Connected to Core Instances   : 0
+
+------ Design Rule Checking:
+
+Number of Output Pins connect to Power/Ground *: 0
+Number of Insts with Input Pins tied together ?: 7
+Number of TieHi/Lo term nets not connected to instance's PG terms ?: 0
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_IOVDD6' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VSSIO' of Io  instance 'pad_IOVSS6' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_IOVDD5' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VSSIO' of Io  instance 'pad_IOVSS5' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_IOVDD4' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VSSIO' of Io  instance 'pad_IOVSS4' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_IOVDD3' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VSSIO' of Io  instance 'pad_IOVSS3' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_IOVDD2' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VSSIO' of Io  instance 'pad_IOVSS2' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VSSIO' of Io  instance 'pad_IOVSS1' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_IOVDD1' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_POC' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_IOVDD7' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VSSIO' of Io  instance 'pad_IOVSS8' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+Number of Input/InOut Floating Pins            : 15
+Number of Output Floating Pins                 : 0
+Number of Output Term Marked TieHi/Lo         *: 0
+
+**WARN: (IMPREPO-216):	There are 7 Instances with input pins tied together.
+**WARN: (IMPREPO-218):	There are 15 Floating Instance terminals.
+Number of nets with tri-state drivers          : 0
+Number of nets with parallel drivers           : 0
+Number of nets with multiple drivers           : 0
+Number of nets with no driver (No FanIn)       : 0
+Number of Output Floating nets (No FanOut)     : 801
+Number of High Fanout nets (>50)               : 18
+**WARN: (IMPREPO-227):	There are 18 High Fanout nets (>50).
+**WARN: (IMPREPO-231):	Input netlist has a cell 'rf_2p_hse' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'rf_2p_hse' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (EMS-27):	Message (IMPREPO-231) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+
+# Number of cells of input netlist marked dont_use = 58.
+
+Checking routing tracks.....
+Checking other grids.....
+**ERROR: (IMPFP-3953):	The user grid is not a multiple of manufacturing grid. You can specfiy the user-defined grid in the Preferences - Floorplan form in the Options menu.
+**ERROR: (IMPFP-3953):	The user grid is not a multiple of manufacturing grid. You can specfiy the user-defined grid in the Preferences - Floorplan form in the Options menu.
+**ERROR: (IMPFP-3971):	The GCell Grid (710.607 0) is not on manufacturing grid.
+Type 'man IMPFP-3971' for more detail.
+**ERROR: (IMPFP-3971):	The GCell Grid (-68.7725 0) is not on manufacturing grid.
+Type 'man IMPFP-3971' for more detail.
+Checking routing blockage.....
+Checking components.....
+**ERROR: (IMPFP-3975):	Instance ipad_CLK not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_DoDCT not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_HALT not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_Mode not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_RESET_ not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_SCAN_EN not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_TEST_MODE not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_X0 not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_X1 not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_X2 not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_X3 not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_X4 not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_X5 not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_X6 not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_X7 not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_X8 not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_X9 not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_X10 not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance ipad_X11 not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**ERROR: (IMPFP-3975):	Instance opad_Z0 not on manufacturing grid. It must be on manufacturing grid in order to be manufactured. Move the object so it is on the manufacturing grid.
+Type 'man IMPFP-3975' for more detail.
+**WARN: (EMS-27):	Message (IMPFP-3975) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+Checking constraints (guide/region/fence).....
+Checking groups.....
+Checking Ptn Core Box.....
+
+Checking Preroutes.....
+No. of regular pre-routes not on tracks : 0 
+ Design check done.
+Report saved in file checkDesign/CHIP.main.htm.ascii
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+ERROR     IMPFP-3953           2  The user grid is not a multiple of manuf...
+ERROR     IMPFP-3971           2  The GCell Grid (%g %g) is not on manufac...
+ERROR     IMPFP-3975          56  Instance %s not on manufacturing grid. I...
+WARNING   IMPDB-2136          15  %s term '%s' of %s instance '%s' does no...
+WARNING   IMPREPO-227          1  There are %d High Fanout nets (>50).     
+WARNING   IMPREPO-231         58  Input netlist has a cell '%s' which is m...
+WARNING   IMPREPO-205          1  There are %d Cells with missing PG PIN.  
+WARNING   IMPREPO-216          1  There are %d Instances with input pins t...
+WARNING   IMPREPO-218          1  There are %d Floating Instance terminals...
+*** Message Summary: 77 warning(s), 60 error(s)
+
+<CMD> gui_select -rect {8.09550 503.37700 -196.32300 508.33250}
+<CMD> checkDesign -io -netlist -physicalLibrary -powerGround -tieHilo -timingLibrary -spef -outdir checkDesign
+**WARN: (IMPREPO-205):	There are 15 Cells with missing PG PIN.
+############################################################################
+# Innovus Netlist Design Rule Check
+# Fri May 12 11:33:56 2023
+############################################################################
+Design: CHIP
+
+------ Design Summary:
+Total Standard Cell Number   (cells) : 10759
+Total Block Cell Number      (cells) : 2
+Total I/O Pad Cell Number    (cells) : 56
+Total Standard Cell Area     ( um^2) : 33786.52
+Total Block Cell Area        ( um^2) : 7337.36
+Total I/O Pad Cell Area      ( um^2) : 462744.24
+
+------ Design Statistics:
+
+Number of Instances            : 10817
+Number of Non-uniquified Insts : 10806
+Number of Nets                 : 17172
+Average number of Pins per Net : 2.79
+Maximum number of Pins in Net  : 3285
+
+------ I/O Port summary
+
+Number of Primary I/O Ports    : 31
+Number of Input Ports          : 19
+Number of Output Ports         : 12
+Number of Bidirectional Ports  : 0
+Number of Power/Ground Ports   : 0
+Number of Floating Ports                     *: 0
+Number of Ports Connected to Multiple Pads   *: 0
+Number of Ports Connected to Core Instances   : 0
+
+------ Design Rule Checking:
+
+Number of Output Pins connect to Power/Ground *: 0
+Number of Insts with Input Pins tied together ?: 7
+Number of TieHi/Lo term nets not connected to instance's PG terms ?: 0
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_IOVDD6' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VSSIO' of Io  instance 'pad_IOVSS6' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_IOVDD5' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VSSIO' of Io  instance 'pad_IOVSS5' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_IOVDD4' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VSSIO' of Io  instance 'pad_IOVSS4' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_IOVDD3' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VSSIO' of Io  instance 'pad_IOVSS3' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_IOVDD2' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VSSIO' of Io  instance 'pad_IOVSS2' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VSSIO' of Io  instance 'pad_IOVSS1' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_IOVDD1' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_POC' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_IOVDD7' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VSSIO' of Io  instance 'pad_IOVSS8' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+Number of Input/InOut Floating Pins            : 15
+Number of Output Floating Pins                 : 0
+Number of Output Term Marked TieHi/Lo         *: 0
+
+**WARN: (IMPREPO-216):	There are 7 Instances with input pins tied together.
+**WARN: (IMPREPO-218):	There are 15 Floating Instance terminals.
+Number of nets with tri-state drivers          : 0
+Number of nets with parallel drivers           : 0
+Number of nets with multiple drivers           : 0
+Number of nets with no driver (No FanIn)       : 0
+Number of Output Floating nets (No FanOut)     : 801
+Number of High Fanout nets (>50)               : 18
+**WARN: (IMPREPO-227):	There are 18 High Fanout nets (>50).
+**WARN: (IMPREPO-231):	Input netlist has a cell 'rf_2p_hse' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'rf_2p_hse' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (EMS-27):	Message (IMPREPO-231) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+
+# Number of cells of input netlist marked dont_use = 58.
+
+Design check done.
+Report saved in file checkDesign/CHIP.main.htm.ascii
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPDB-2136          15  %s term '%s' of %s instance '%s' does no...
+WARNING   IMPREPO-227          1  There are %d High Fanout nets (>50).     
+WARNING   IMPREPO-231         58  Input netlist has a cell '%s' which is m...
+WARNING   IMPREPO-205          1  There are %d Cells with missing PG PIN.  
+WARNING   IMPREPO-216          1  There are %d Instances with input pins t...
+WARNING   IMPREPO-218          1  There are %d Floating Instance terminals...
+*** Message Summary: 77 warning(s), 0 error(s)
+
+<CMD> checkDesign -io -netlist -physicalLibrary -powerGround -tieHilo -timingLibrary -spef -outdir checkDesign
+**WARN: (IMPREPO-205):	There are 15 Cells with missing PG PIN.
+############################################################################
+# Innovus Netlist Design Rule Check
+# Fri May 12 11:33:59 2023
+############################################################################
+Design: CHIP
+
+------ Design Summary:
+Total Standard Cell Number   (cells) : 10759
+Total Block Cell Number      (cells) : 2
+Total I/O Pad Cell Number    (cells) : 56
+Total Standard Cell Area     ( um^2) : 33786.52
+Total Block Cell Area        ( um^2) : 7337.36
+Total I/O Pad Cell Area      ( um^2) : 462744.24
+
+------ Design Statistics:
+
+Number of Instances            : 10817
+Number of Non-uniquified Insts : 10806
+Number of Nets                 : 17172
+Average number of Pins per Net : 2.79
+Maximum number of Pins in Net  : 3285
+
+------ I/O Port summary
+
+Number of Primary I/O Ports    : 31
+Number of Input Ports          : 19
+Number of Output Ports         : 12
+Number of Bidirectional Ports  : 0
+Number of Power/Ground Ports   : 0
+Number of Floating Ports                     *: 0
+Number of Ports Connected to Multiple Pads   *: 0
+Number of Ports Connected to Core Instances   : 0
+
+------ Design Rule Checking:
+
+Number of Output Pins connect to Power/Ground *: 0
+Number of Insts with Input Pins tied together ?: 7
+Number of TieHi/Lo term nets not connected to instance's PG terms ?: 0
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_IOVDD6' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VSSIO' of Io  instance 'pad_IOVSS6' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_IOVDD5' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VSSIO' of Io  instance 'pad_IOVSS5' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_IOVDD4' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VSSIO' of Io  instance 'pad_IOVSS4' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_IOVDD3' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VSSIO' of Io  instance 'pad_IOVSS3' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_IOVDD2' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VSSIO' of Io  instance 'pad_IOVSS2' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VSSIO' of Io  instance 'pad_IOVSS1' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_IOVDD1' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_POC' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VDDIO' of Io  instance 'pad_IOVDD7' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+**WARN: (IMPDB-2136):	InOut term 'VSSIO' of Io  instance 'pad_IOVSS8' does not connect to a '' net. The netlist is not correct or the net for connecting tie high/low signals is not specified. To resolve this problem, check your netlist or run globalNetConnect to specify the tie high/low signal nets.
+Number of Input/InOut Floating Pins            : 15
+Number of Output Floating Pins                 : 0
+Number of Output Term Marked TieHi/Lo         *: 0
+
+**WARN: (IMPREPO-216):	There are 7 Instances with input pins tied together.
+**WARN: (IMPREPO-218):	There are 15 Floating Instance terminals.
+Number of nets with tri-state drivers          : 0
+Number of nets with parallel drivers           : 0
+Number of nets with multiple drivers           : 0
+Number of nets with no driver (No FanIn)       : 0
+Number of Output Floating nets (No FanOut)     : 801
+Number of High Fanout nets (>50)               : 18
+**WARN: (IMPREPO-227):	There are 18 High Fanout nets (>50).
+**WARN: (IMPREPO-231):	Input netlist has a cell 'rf_2p_hse' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'rf_2p_hse' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (IMPREPO-231):	Input netlist has a cell 'PADIN' which is marked dont_use in the library. This cell will not be used in timing optimization. Use set_dont_use command to change. Instances of this cell are : <output of dbGet top.insts.cell.name <the cell> -p2
+**WARN: (EMS-27):	Message (IMPREPO-231) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+
+# Number of cells of input netlist marked dont_use = 58.
+
+Design check done.
+Report saved in file checkDesign/CHIP.main.htm.ascii
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPDB-2136          15  %s term '%s' of %s instance '%s' does no...
+WARNING   IMPREPO-227          1  There are %d High Fanout nets (>50).     
+WARNING   IMPREPO-231         58  Input netlist has a cell '%s' which is m...
+WARNING   IMPREPO-205          1  There are %d Cells with missing PG PIN.  
+WARNING   IMPREPO-216          1  There are %d Instances with input pins t...
+WARNING   IMPREPO-218          1  There are %d Floating Instance terminals...
+*** Message Summary: 77 warning(s), 0 error(s)
+
+<CMD> encMessage warning 0
+Suppress "**WARN ..." messages.
+<CMD> encMessage debug 0
+<CMD> read_db DATA/design_import.enc
+**ERROR: (IMPIMEX-7331):	Cannot identify the top cell name. The design directory specified is not a valid directory generated by write_db command and therefore design can not be restored.
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+ERROR     IMPIMEX-7331         1  Cannot identify the top cell name. The d...
+*** Message Summary: 0 warning(s), 1 error(s)
+
+**ERROR: (IMPSYT-6300):	Failed to execute command 'read_db'. For more details, refer to error message: **ERROR: (IMPIMEX-7331):	Cannot identify the top cell name. The design directory specified is not a valid directory generated by write_db command and therefore design can not be restored.
+
+<CMD> encMessage warning 1
+Un-suppress "**WARN ..." messages.
+<CMD> encMessage debug 0
+<CMD> encMessage warning 0
+Suppress "**WARN ..." messages.
+<CMD> encMessage debug 0
+<CMD> read_db DATA/design_import.enc
+**ERROR: (IMPIMEX-7331):	Cannot identify the top cell name. The design directory specified is not a valid directory generated by write_db command and therefore design can not be restored.
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+ERROR     IMPIMEX-7331         1  Cannot identify the top cell name. The d...
+*** Message Summary: 0 warning(s), 1 error(s)
+
+**ERROR: (IMPSYT-6300):	Failed to execute command 'read_db'. For more details, refer to error message: **ERROR: (IMPIMEX-7331):	Cannot identify the top cell name. The design directory specified is not a valid directory generated by write_db command and therefore design can not be restored.
+
+<CMD> encMessage warning 1
+Un-suppress "**WARN ..." messages.
+<CMD> encMessage debug 0
+
+--------------------------------------------------------------------------------
+Exiting Innovus on Fri May 12 11:36:04 2023
+  Total CPU time:     0:01:40
+  Total real time:    0:10:22
+  Peak memory (main): 1387.62MB
+
+
+*** Memory Usage v#1 (Current mem = 1952.277M, initial mem = 387.332M) ***
+*** Message Summary: 313 warning(s), 133 error(s)
+
+--- Ending "Innovus" (totcpu=0:01:34, real=0:10:20, mem=1952.3M) ---

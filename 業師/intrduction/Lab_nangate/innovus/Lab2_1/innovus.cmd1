@@ -1,0 +1,117 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Fri May 19 11:52:49 2023                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v21.13-s100_1 (64bit) 03/04/2022 14:32 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: NanoRoute 21.13-s100_1 NR220220-0140/21_13-UB (database version 18.20.572) {superthreading v2.17}
+#@(#)CDS: AAE 21.13-s034 (64bit) 03/04/2022 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: CTE 21.13-s042_1 () Mar  4 2022 08:38:36 ( )
+#@(#)CDS: SYNTECH 21.13-s014_1 () Feb 17 2022 23:50:03 ( )
+#@(#)CDS: CPE v21.13-s074
+#@(#)CDS: IQuantus/TQuantus 20.1.2-s656 (64bit) Tue Nov 9 23:11:16 PST 2021 (Linux 2.6.32-431.11.2.el6.x86_64)
+
+setLibraryUnit -cap 1pf
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+win
+encMessage warning 0
+encMessage debug 0
+is_common_ui_mode
+restoreDesign /home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2_1/DBS/pre-cts.enc.dat CHIP
+setDrawView fplan
+encMessage warning 1
+encMessage debug 0
+zoomBox -399.86800 -254.04900 925.62550 932.55050
+zoomBox -833.08600 -551.73700 1001.50700 1090.61550
+zoomBox -586.73300 -385.12850 972.67100 1010.87100
+zoomBox -377.03050 -243.51100 948.46300 943.08850
+setLayerPreference layerBlk -isVisible 0
+uiSetTool stretchWire
+setEditMode -type regular
+all_constraint_modes
+set_interactive_constraint_modes [all_constraint_modes]
+reset_clock_latency [all_clocks]
+set_ccopt_property buffer_cells { CLKBUF_X1 CLKBUF_X2 CLKBUF_X3 }
+set_ccopt_property clock_gating_cells { CLKGATE_X1 CLKGATE_X2 CLKGATE_X4 CLKGATE_X8  }
+set_ccopt_property update_io_latency false
+create_ccopt_clock_tree_spec
+ccopt_design
+saveDesign DBS/cts.enc
+saveDesign DBS/cts.enc
+ctd_win -side none -id ctd_window
+getDelayCalMode -quiet -equivalent_waveform_model
+redirect -quiet {set honorDomain [getAnalysisMode -honorClockDomains]} > /dev/null
+timeDesign -postCTS -pathReports -drvReports -slackReports -numPaths 50 -prefix CHIP_postCTS -outDir timingReports
+setOptMode -fixCap true -fixTran true -fixFanoutLoad true
+optDesign -postCTS
+getAnalysisMode -checkType -quiet
+get_time_unit
+report_timing -machine_readable -max_paths 10000 -max_slack 0.75 -path_exceptions all -late > top.mtarpt
+load_timing_debug_report -name default_report top.mtarpt -max_path_num 10000 -updateCategory 0
+analyze_paths_by_basic_path_group
+analyze_paths_by_basic_path_group
+ctd_win -side none -id ctd_window
+selectInst {u_IDCT/Z_reg[5]}
+zoomSelected
+editSelect -net {i_Z[5]}
+zoomSelected
+editSelect -net {i_Z[5]}
+zoomSelected
+selectInst FE_OFC72_i_Z_5
+zoomSelected
+editSelect -net FE_OFN74_i_Z_5
+zoomSelected
+selectInst FE_OFC72_i_Z_5
+zoomSelected
+editSelect -net FE_OFN74_i_Z_5
+zoomSelected
+selectInst FE_OFC73_i_Z_5
+zoomSelected
+selectInst FE_OFC73_i_Z_5
+zoomSelected
+editSelect -net FE_OFN75_i_Z_5
+zoomSelected
+selectInst opad_Z5
+zoomSelected
+editSelect -net FE_OFN75_i_Z_5
+zoomSelected
+selectInst opad_Z5
+zoomSelected
+editSelect -net {Z[5]}
+zoomSelected
+selectInst FE_OFC72_i_Z_5
+zoomSelected
+editSelect -net FE_OFN74_i_Z_5
+zoomSelected
+selectInst FE_OFC73_i_Z_5
+zoomSelected
+zoomBox 396.96800 206.70650 540.47600 335.17700
+zoomBox 323.50950 156.13100 557.18950 365.32450
+zoomBox 145.62350 39.43050 593.28250 440.18100
+zoomBox 79.80850 -3.59450 606.46600 467.87650
+zoomBox 1.17600 -53.49100 620.77350 501.18100
+zoomBox -91.04950 -111.91000 637.88900 540.64550
+zoomBox -198.88450 -181.80300 658.69050 585.90950
+zoomBox -324.96600 -263.63850 683.94600 639.55300
+redirect -quiet {set honorDomain [getAnalysisMode -honorClockDomains]} > /dev/null
+timeDesign -preCTS -hold -pathReports -slackReports -numPaths 50 -prefix CHIP_preCTS -outDir timingReports
+setOptMode -fixCap true -fixTran true -fixFanoutLoad true
+optDesign -postCTS
+optDesign -postCTS -hold
+setAnalysisMode -checkType hold
+redirect -quiet {set honorDomain [getAnalysisMode -honorClockDomains]} > /dev/null
+timeDesign -preCTS -hold -pathReports -slackReports -numPaths 50 -prefix CHIP_preCTS -outDir timingReports
+getAnalysisMode -checkType -quiet
+get_time_unit
+report_timing -machine_readable -max_paths 10000 -max_slack 0.75 -path_exceptions all -early > top.mtarpt
+load_timing_debug_report -name default_report top.mtarpt -max_path_num 10000 -updateCategory 0
+selectInst {u_IDCT/tposemem_Bisted_RF_2P_ADV64x16_BistCtrl_i0_S43_S5_reg[5]}
+zoomSelected
+editSelect -net {u_IDCT/tposemem_Bisted_RF_2P_ADV64x16_bist_ctrl_n[5]}
+zoomSelected
+addTieHiLo -cell {LOGIC1_X1 LOGIC0_X1} -prefix LTIE
+saveDesign DBS/postcts.enc
+checkDesign -tieHilo

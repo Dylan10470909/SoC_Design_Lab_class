@@ -1,0 +1,56 @@
+Warning: Can't read link_library file 'saed90nm_min_lvt_ccs.db'. (UID-3)
+Error: Could not read the following target libraries:
+saed90nm_min_lvt_ccs.db 
+ (UIO-3)
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Warning: Can't read link_library file 'saed90nm_min_lvt_ccs.db'. (UID-3)
+Warning: Can't read link_library file 'saed90nm_min_lvt_ccs.db'. (UID-3)
+Information: Updating design information... (UID-85)
+Warning: Design 'alu' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : alu
+Version: U-2022.12
+Date   : Fri Apr 28 10:14:05 2023
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: nom_pvt   Library: dw_foundation.sldb
+Wire Load Model Mode: top
+
+  Startpoint: AY0_2nd_reg[15]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: AF_1st_reg[0]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  AY0_2nd_reg[15]/clocked_on (**SEQGEN**)                 0.00       0.00 r
+  AY0_2nd_reg[15]/Q (**SEQGEN**)                          0.00       0.00 r
+  C1301/Z_15 (*SELECT_OP_2.16_2.1_16)                     0.00       0.00 r
+  C1304/Z_0 (*SELECT_OP_2.16_2.1_16)                      0.00       0.00 r
+  AF_1st_reg[0]/next_state (**SEQGEN**)                   0.00       0.00 r
+  data arrival time                                                  0.00
+
+  clock CLK (rise edge)                                   2.00       2.00
+  clock network delay (ideal)                             0.00       2.00
+  AF_1st_reg[0]/clocked_on (**SEQGEN**)                   0.00       2.00 r
+  library setup time                                      0.00       2.00
+  data required time                                                 2.00
+  --------------------------------------------------------------------------
+  data required time                                                 2.00
+  data arrival time                                                  0.00
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.00
+
+
+1

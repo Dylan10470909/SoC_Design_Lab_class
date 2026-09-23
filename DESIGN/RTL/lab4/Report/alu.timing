@@ -1,0 +1,67 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : alu
+Version: U-2022.12
+Date   : Fri Mar 24 12:11:22 2023
+****************************************
+
+Operating Conditions: TYPICAL   Library: saed90nm_typ_htm_hvt_ccs
+Wire Load Model Mode: top
+
+  Startpoint: AX0_2nd_reg[13]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: AF_2nd_reg[10]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  alu                35000                 saed90nm_typ_htm_hvt_ccs
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock CLK (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  AX0_2nd_reg[13]/CLK (DFFARX1_HVT)        0.00       0.00 r
+  AX0_2nd_reg[13]/QN (DFFARX1_HVT)         0.77       0.77 r
+  U1238/Q (OA22X1_HVT)                     0.51       1.27 r
+  U873/ZN (INVX1_HVT)                      0.19       1.46 f
+  U872/Q (OA22X2_HVT)                      0.69       2.15 f
+  U1200/Q (XOR2X1_HVT)                     0.91       3.07 r
+  U1326/QN (NOR2X1_HVT)                    0.32       3.39 f
+  U1330/QN (OAI21X1_HVT)                   0.59       3.98 r
+  U1331/QN (AOI21X1_HVT)                   0.39       4.37 f
+  U1355/Q (OR2X1_HVT)                      0.34       4.71 f
+  U1356/QN (NAND3X0_HVT)                   0.18       4.89 r
+  U1416/QN (AOI21X1_HVT)                   0.63       5.52 f
+  U1419/Q (XOR2X1_HVT)                     0.68       6.20 r
+  U1420/Q (MUX21X1_HVT)                    0.55       6.75 f
+  U1424/QN (NAND2X2_HVT)                   0.23       6.98 r
+  U1431/Q (AND2X1_HVT)                     0.40       7.38 r
+  U1432/ZN (INVX1_HVT)                     0.24       7.63 f
+  U1433/QN (NAND2X2_HVT)                   0.28       7.91 r
+  U1441/Q (AO21X1_HVT)                     0.66       8.57 r
+  U2081/QN (AOI22X1_HVT)                   0.64       9.21 f
+  U940/QN (NAND2X0_HVT)                    0.16       9.37 r
+  AF_2nd_reg[10]/D (DFFARX1_HVT)           0.03       9.40 r
+  data arrival time                                   9.40
+
+  clock CLK (rise edge)                   10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  AF_2nd_reg[10]/CLK (DFFARX1_HVT)         0.00      10.00 r
+  library setup time                      -0.60       9.40
+  data required time                                  9.40
+  -----------------------------------------------------------
+  data required time                                  9.40
+  data arrival time                                  -9.40
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+1

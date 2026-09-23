@@ -1,0 +1,63 @@
+Total 2 violations (muxed_scan)
+ 
+Async. set/reset Rule Violations
+================================
+Reporting 2 async set/reset violations
+
+Violation #0:
+  Object name: vid_0_async
+  Type: async violation
+  Description: [ASYNC-05] async signal driven by a sequential element
+  Source: u_DCT/buf_RESET__reg/q
+  Endpoints: 
+    u_DCT/DRU/Count_reg[0]/aclr 
+  Number of registers affected: 3
+  Affected registers:
+    u_DCT/DRU/Count_reg[0]
+    u_DCT/DRU/Count_reg[1]
+    u_DCT/DRU/Count_reg[2]
+ 
+Violation #1:
+  Object name: vid_1_async
+  Type: async violation
+  Description: [ASYNC-05] async signal driven by a sequential element
+  Source: u_IDCT/buf_RESET__reg/q
+  Endpoints: 
+    u_IDCT/DRU/Count_reg[0]/aclr 
+  Number of registers affected: 3
+  Affected registers:
+    u_IDCT/DRU/Count_reg[0]
+    u_IDCT/DRU/Count_reg[1]
+    u_IDCT/DRU/Count_reg[2]
+ 
+Clock Rule Violations
+=====================
+Reporting 0 clock violations
+
+Abstract Segment Test Mode Violations
+=====================================
+Reporting 0 abstract segment violations
+
+Shift Register Segment Violations
+=================================
+Reporting 0 shift register segment violations
+
+Tristate net contention Violations
+==================================
+Reporting 0 tristate net contention violations
+
+Potential Race Condition Violations
+==================================
+Reporting 0 potential race condition violations
+
+X-source Violations
+==================
+Reporting 0 x-source violations
+
+X-source Violations By Instance
+===============================
+Reporting 0 instances generating observable x-sources
+ 
+Violation Rule Summary Report
+=============================
+[ASYNC-05] async signal driven by a sequential element : 2 

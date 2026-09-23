@@ -1,0 +1,35 @@
+# technology map for FreePDK45  cell lib
+TECHVERSION  1
+U_UNIT 0.001
+#
+#LAYER  ======lef=======    =============gds====================
+#       =====       ====    draw    draw    text    text
+#       layer       type    layer   purpose layer   purpose draw? 
+LAYER   metal1          PIN     11      0       11      0       y
+LAYER   metal2          PIN     13      0       13      0       y
+LAYER   metal3          PIN     15      0       15      0       y
+LAYER   metal4          PIN     17      0       17      0       y
+LAYER   metal5          PIN     19      0       19      0       y
+LAYER   metal6          PIN     21      0       21      0       y
+LAYER   metal7          PIN     23      0       23      0       y
+LAYER   metal8          PIN     25      0       25      0       y
+LAYER   metal9          PIN     27      0       27      0       y
+
+LAYER   metal1          OBS     11      0       n
+LAYER   metal2          OBS     13      0       n
+LAYER   metal3          OBS     15      0       n
+LAYER   metal4          OBS     17      0       n
+LAYER   metal5          OBS     19      0       n
+LAYER   metal6          OBS     21      0       n
+LAYER   metal7          OBS     23      0       n
+LAYER   metal8          OBS     25      0       n
+LAYER   metal9          OBS     27      0       n
+LAYER   via1            OBS     12      0       n
+LAYER   via2            OBS     14      0       n
+LAYER   via3            OBS     16      0       n
+LAYER   via4            OBS     18      0       n
+LAYER   via5            OBS     20      0       n
+LAYER   via6            OBS     22      0       n
+LAYER   via7            OBS     24      0       n
+LAYER   via8            OBS     26      0       n
+LAYER   boundary        NA      108     3       y  #prboundary       

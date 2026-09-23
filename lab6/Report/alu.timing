@@ -1,0 +1,66 @@
+Information: Updating design information... (UID-85)
+Warning: There are infeasible paths detected in your design that were ignored during optimization. Please run 'report_timing -attributes' and/or 'create_qor_snapshot/query_qor_snapshot -infeasible_paths' to identify these paths.  (OPT-1721)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : alu
+Version: U-2022.12
+Date   : Fri Apr 21 11:54:42 2023
+****************************************
+
+Operating Conditions: TYPICAL   Library: saed90nm_typ_ht_hvt_ccs
+Wire Load Model Mode: enclosed
+
+  Startpoint: IR[22] (input port clocked by CLK)
+  Endpoint: ASTAT0_in (output port clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  alu                35000                 saed90nm_typ_ht_hvt_ccs
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock CLK (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     1.00       1.00 r
+  IR[22] (in)                              0.00       1.00 r
+  U1683/ZN (INVX0_HVT)                     0.07       1.07 f
+  U1684/Q (AND3X1_HVT)                     0.19       1.26 f
+  U1527/QN (NAND3X0_HVT)                   0.18       1.44 r
+  U1493/QN (NOR2X1_HVT)                    0.21       1.65 f
+  U1483/Q (OR3X2_HVT)                      0.40       2.04 f
+  U1800/QN (NOR2X0_HVT)                    0.23       2.28 r
+  U1532/ZN (INVX0_HVT)                     0.10       2.38 f
+  U1531/QN (NAND4X0_HVT)                   0.21       2.59 r
+  U908/Q (XOR2X1_HVT)                      0.40       2.99 f
+  U1530/Q (OR2X1_HVT)                      0.22       3.21 f
+  U1602/Q (AND2X1_HVT)                     0.19       3.40 f
+  U1820/QN (NAND2X1_HVT)                   0.15       3.55 r
+  U1821/QN (AOI21X1_HVT)                   0.24       3.79 f
+  U1830/QN (NOR2X1_HVT)                    0.16       3.95 r
+  U1489/Q (OR2X1_HVT)                      0.21       4.16 r
+  U1542/QN (NAND3X0_HVT)                   0.13       4.28 f
+  U1418/QN (NAND2X0_HVT)                   0.15       4.43 r
+  U1508/QN (NAND2X0_HVT)                   0.13       4.56 f
+  U2307/Q (OA21X1_HVT)                     0.20       4.76 f
+  U2383/QN (NOR2X0_HVT)                    0.11       4.86 r
+  ASTAT0_in (out)                          0.00       4.86 r
+  data arrival time                                   4.86
+
+  clock CLK (rise edge)                    1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -1.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                  -4.86
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -4.86
+
+
+1

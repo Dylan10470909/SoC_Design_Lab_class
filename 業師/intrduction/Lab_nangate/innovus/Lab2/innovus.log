@@ -1,0 +1,694 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.13-s100_1, built Fri Mar 4 14:32:31 PST 2022
+Options:	
+Date:		Fri May 12 11:38:46 2023
+Host:		f453_server (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (12cores*48cpus*Intel(R) Xeon(R) CPU E5-2690 v3 @ 2.60GHz 30720KB)
+OS:		CentOS Linux release 7.9.2009 (Core)
+
+License:
+		[11:38:46.175547] Configured Lic search path (20.02-s004): 5280@lstn:26585@lstn:
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+**WARN: (IMPOPT-801):	Genus executable not found in PATH. Install Genus, add the path to the genus executable in the PATH variable and rerun Innovus.
+Change the soft stacksize limit to 0.2%RAM (257 mbytes). Set global soft_stack_size_limit to change the value.
+Sourcing startup file ./enc.tcl
+Warning: init_remove_assigns is obsolete and will be retired starting in release Innovus 22.1. Please use init_no_new_assigns instead.
+<CMD> set init_remove_assigns 1
+<CMD> setLibraryUnit -cap 1pf
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> win
+<CMD> encMessage warning 0
+Suppress "**WARN ..." messages.
+<CMD> encMessage debug 0
+<CMD> is_common_ui_mode
+<CMD> restoreDesign /home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat CHIP
+#% Begin load design ... (date=05/12 11:39:28, mem=816.0M)
+Set Default Input Pin Transition as 0.1 ps.
+Loading design 'CHIP' saved by 'Innovus' '19.12-s087_1' on 'Wed Jun 3 14:43:40 2020'.
+% Begin Load MMMC data ... (date=05/12 11:39:29, mem=817.9M)
+% End Load MMMC data ... (date=05/12 11:39:29, total cpu=0:00:00.0, real=0:00:00.0, peak res=818.9M, current mem=817.6M)
+RC_typ RC_best RC_worst
+
+Loading LEF file /home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/libs/lef/NangateOpenCellLibrary.tech.lef ...
+
+Loading LEF file /home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/libs/lef/NangateOpenCellLibrary.macro.lef ...
+Set DBUPerIGU to M2 pitch 380.
+
+Loading LEF file /home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/libs/lef/tpz.lef ...
+WARNING (LEFPARS-2001): No VERSION statement found, using the default value 5.8. See file /home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/libs/lef/tpz.lef at line 703.
+
+Loading LEF file /home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/libs/lef/rf_2p_hse.lef ...
+
+viaInitial starts at Fri May 12 11:39:29 2023
+viaInitial ends at Fri May 12 11:39:29 2023
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Loading view definition file from /home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/viewDefinition.tcl
+Reading lib_max timing library '/home/111-2/C108110249/lab1/Lab_nangate/library/lib/NangateOpenCellLibrary_slow.lib' ...
+Read 134 cells in library 'NangateOpenCellLibrary' 
+Reading lib_max timing library '/home/111-2/C108110249/lab1/Lab_nangate/library/memory/rf_2p_hse_nldm_ss_0p81v_0p81v_125c_syn.lib' ...
+Read 1 cells in library 'USERLIB_nldm_ss_0p81v_0p81v_125c' 
+Reading lib_max timing library '/home/111-2/C108110249/lab1/Lab_nangate/library/lib/tpz_slow.lib' ...
+Read 9 cells in library 'io_worst' 
+Reading lib_min timing library '/home/111-2/C108110249/lab1/Lab_nangate/library/lib/NangateOpenCellLibrary_fast.lib' ...
+Read 134 cells in library 'NangateOpenCellLibrary' 
+Reading lib_min timing library '/home/111-2/C108110249/lab1/Lab_nangate/library/memory/rf_2p_hse_nldm_ff_0p99v_0p99v_m40c_syn.lib' ...
+Read 1 cells in library 'USERLIB_nldm_ff_0p99v_0p99v_m40c' 
+Reading lib_min timing library '/home/111-2/C108110249/lab1/Lab_nangate/library/lib/tpz_fast.lib' ...
+Read 9 cells in library 'io_best' 
+*** End library_loading (cpu=0.01min, real=0.02min, mem=18.0M, fe_cpu=0.40min, fe_real=0.73min, fe_mem=1033.5M) ***
+% Begin Load netlist data ... (date=05/12 11:39:30, mem=831.2M)
+*** Begin netlist parsing (mem=1033.5M) ***
+Pin 'VSS' of cell 'PADVSS' is declared as power/ground in LEF but as signal in timing library.  Treat it as power/ground.
+Pin 'VDD' of cell 'PADVDD' is declared as power/ground in LEF but as signal in timing library.  Treat it as power/ground.
+Created 144 new cells from 6 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilogBinary netlist '/home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/CHIP.v.bin'
+
+*** Memory Usage v#1 (Current mem = 1046.523M, initial mem = 387.332M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1046.5M) ***
+% End Load netlist data ... (date=05/12 11:39:30, total cpu=0:00:00.0, real=0:00:00.0, peak res=840.2M, current mem=840.2M)
+Set top cell to CHIP.
+Hooked 288 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell CHIP ...
+*** Netlist is unique.
+** info: there are 780 modules.
+** info: there are 10759 stdCell insts.
+** info: there are 31 Pad insts.
+** info: there are 2 macros.
+
+*** Memory Usage v#1 (Current mem = 1109.449M, initial mem = 387.332M) ***
+*info: set bottom ioPad orient R0
+Initializing I/O assignment ...
+**WARN: (IMPFP-3961):	The techSite 'rf_2p_hse' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'pad' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+Loading preference file /home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/gui.pref.tcl ...
+**WARN: (IMPSYT-3004):	Option ConstraintUserXGrid is obsolete and will be removed in future release.  Use 'setFPlanMode -user_define_grid' instead. To avoid this warning and to ensure compatibility with  future releases, please remove the obsolete preference from your script.
+**WARN: (IMPSYT-3004):	Option ConstraintUserYGrid is obsolete and will be removed in future release.  Use 'setFPlanMode -user_define_grid' instead. To avoid this warning and to ensure compatibility with  future releases, please remove the obsolete preference from your script.
+**WARN: (IMPSYT-3004):	Option ConstraintUserXOffset is obsolete and will be removed in future release.  Use 'setFPlanMode -user_define_grid' instead. To avoid this warning and to ensure compatibility with  future releases, please remove the obsolete preference from your script.
+**WARN: (IMPSYT-3004):	Option ConstraintUserYOffset is obsolete and will be removed in future release.  Use 'setFPlanMode -user_define_grid' instead. To avoid this warning and to ensure compatibility with  future releases, please remove the obsolete preference from your script.
+**WARN: (IMPSYT-3046):	Unknown preference name "SnapAllCorners".
+**WARN: (IMPSYT-3046):	Unknown preference name "UserGridUnit".
+**WARN: (IMPSYT-3046):	Unknown preference name "displayViaSize".
+**WARN: (IMPSYT-3046):	Unknown preference name "MoveMacrosWithGuide".
+**WARN: (IMPSYT-3046):	Unknown preference name "MoveMacrosWithRegion".
+**WARN: (IMPSYT-3046):	Unknown preference name "MoveStdCellWithGuide".
+**WARN: (IMPSYT-3046):	Unknown preference name "MoveStdCellWithRegion".
+**WARN: (IMPSYT-3046):	Unknown preference name "MoveStdCellWithFence".
+**WARN: (IMPSYT-3046):	Unknown preference name "MovePreplacedStdCellOnly".
+##  Process: 45            (User Set)               
+##     Node: (not set)                           
+
+##  Check design process and node:  
+##  Design tech node is not set.
+
+Applying the recommended capacitance filtering threshold values for 45nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.1.
+	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
+	The accuracy mode for postRoute effortLevel low extraction will be set to 'high'.
+	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode will be 'medium' if Quantus QRC technology file is specified else 'low'.
+*Info: initialize multi-corner CTS.
+Reading lib_typ timing library '/home/111-2/C108110249/lab1/Lab_nangate/library/lib/NangateOpenCellLibrary_typical.lib' ...
+Read 134 cells in library 'NangateOpenCellLibrary' 
+Reading lib_typ timing library '/home/111-2/C108110249/lab1/Lab_nangate/library/memory/rf_2p_hse_nldm_tt_0p90v_0p90v_25c_syn.lib' ...
+Read 1 cells in library 'USERLIB_nldm_tt_0p90v_0p90v_25c' 
+Reading lib_typ timing library '/home/111-2/C108110249/lab1/Lab_nangate/library/lib/tpz_typ.lib' ...
+Read 9 cells in library 'io_typ' 
+Total number of combinational cells: 99
+Total number of sequential cells: 29
+Total number of tristate cells: 6
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: BUF_X1 BUF_X2 BUF_X4 BUF_X8 BUF_X16 BUF_X32 CLKBUF_X1 CLKBUF_X2 CLKBUF_X3
+Total number of usable buffers: 9
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: INV_X1 INV_X2 INV_X4 INV_X8 INV_X16 INV_X32
+Total number of usable inverters: 6
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells:
+Total number of identified usable delay cells: 0
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+No delay cells were detected in the set of buffers. Buffers will be used to fix hold violations.
+AV_func_max AV_scan_typ AV_scan_min AV_scan_max AV_func_typ AV_func_min
+Reading floorplan file - /home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/CHIP.fp.gz (mem = 1108.1M).
+% Begin Load floorplan data ... (date=05/12 11:39:31, mem=889.6M)
+*info: reset 17172 existing net BottomPreferredLayer and AvoidDetour
+Deleting old partition specification.
+**WARN: (IMPFP-701):	The Design Boundary's lower left corner not on manufacture grid. The boundary must be on manufacture grid. Check the definition of manufacture grid. Check the definition of manufacture grid in the tech LEF/OA  or re-specify floorplan.
+Type 'man IMPFP-701' for more detail.
+**WARN: (IMPFP-702):	Head box's upper right corner not on manufacture grid.
+Set FPlanBox to (-137545 -117040 1421215 1441720)
+**WARN: (IMPFP-3961):	The techSite 'rf_2p_hse' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'pad' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+ ... processed partition successfully.
+Reading binary special route file /home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/CHIP.fp.spr.gz (Created by Innovus v19.12-s087_1 on Wed Jun  3 14:43:37 2020, version: 1)
+Convert 0 swires and 0 svias from compressed groups
+0 swires and 0 svias were compressed
+0 swires and 0 svias were decompressed from small or sparse groups
+Ending "Read special route file" (total cpu=0:00:00.0, real=0:00:00.0, peak res=890.2M, current mem=890.2M)
+There are 56 io inst loaded
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+% End Load floorplan data ... (date=05/12 11:39:31, total cpu=0:00:00.1, real=0:00:00.0, peak res=892.3M, current mem=892.3M)
+Reading congestion map file /home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/CHIP.route.congmap.gz ...
+% Begin Load SymbolTable ... (date=05/12 11:39:31, mem=892.4M)
+% End Load SymbolTable ... (date=05/12 11:39:32, total cpu=0:00:00.0, real=0:00:01.0, peak res=894.1M, current mem=894.1M)
+Loading place ...
+% Begin Load placement data ... (date=05/12 11:39:32, mem=894.1M)
+Reading placement file - /home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/CHIP.place.gz.
+** Reading stdCellPlacement_binary (Created by Innovus v19.12-s087_1 on Wed Jun  3 14:43:38 2020, version# 2) ...
+Read Views for adaptive view pruning ...
+Read 0 views from Binary DB for adaptive view pruning
+*** Completed restorePlace (cpu=0:00:00.0 real=0:00:00.0 mem=1114.1M) ***
+Total net length = 1.605e+01 (8.025e+00 8.025e+00) (ext = 0.000e+00)
+% End Load placement data ... (date=05/12 11:39:32, total cpu=0:00:00.0, real=0:00:00.0, peak res=894.1M, current mem=894.1M)
+Reading PG file /home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/CHIP.pg.gz, version#1, (Created by Innovus v19.12-s087_1 on       Wed Jun  3 14:43:37 2020)
+*** Completed restorePGFile (cpu=0:00:00.0 real=0:00:00.0 mem=1111.1M) ***
+% Begin Load routing data ... (date=05/12 11:39:32, mem=894.6M)
+Reading routing file - /home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/CHIP.route.gz.
+Reading Innovus routing data (Created by Innovus v19.12-s087_1 on Wed Jun  3 14:43:38 2020 Format: 19.1) ...
+*** Total 16114 nets are successfully restored.
+*** Completed restoreRoute (cpu=0:00:00.0 real=0:00:00.0 mem=1111.1M) ***
+% End Load routing data ... (date=05/12 11:39:32, total cpu=0:00:00.0, real=0:00:00.0, peak res=894.8M, current mem=894.8M)
+% Begin Load DEF data ... (date=05/12 11:39:32, mem=894.8M)
+Reading DEF file '/home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/CHIP.scandef.gz', current time is Fri May 12 11:39:32 2023 ...
+--- DIVIDERCHAR '/'
+--- UnitsPerDBU = 1.0000
+DEF file '/home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/CHIP.scandef.gz' is parsed, current time is Fri May 12 11:39:32 2023.
+% End Load DEF data ... (date=05/12 11:39:32, total cpu=0:00:00.0, real=0:00:00.0, peak res=896.1M, current mem=896.1M)
+TAT_INFO: restoreCongMap REAL = 1 : CPU = 0 : MEM = 0.
+Reading property file /home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/CHIP.prop
+*** Completed restoreProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1114.1M) ***
+Set Default Input Pin Transition as 0.1 ps.
+Extraction setup Started 
+Initializing multi-corner RC extraction with 3 active RC Corners ...
+**WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for preRoute and postRoute extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for preRoute and postRoute (effort level medium/high/signoff) extraction engines.
+Type 'man IMPEXT-6202' for more detail.
+Reading Capacitance Table File /home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/libs/mmmc/worst.captbl ...
+Cap table was created using Encounter 13.13-s017_1.
+Process name: FreePDK45.
+Reading Capacitance Table File /home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/libs/mmmc/typical.captbl ...
+Cap table was created using Encounter 13.13-s017_1.
+Process name: FreePDK45.
+Reading Capacitance Table File /home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/libs/mmmc/best.captbl ...
+Cap table was created using Encounter 13.13-s017_1.
+Process name: FreePDK45.
+Importing multi-corner RC tables ... 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: AV_func_max
+    RC-Corner Name        : RC_worst
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/libs/mmmc/worst.captbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/libs/mmmc/RC_worst/worst.tch'
+ 
+ Analysis View: AV_func_typ
+    RC-Corner Name        : RC_typ
+    RC-Corner Index       : 1
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/libs/mmmc/typical.captbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/libs/mmmc/RC_typ/typical.tch'
+ 
+ Analysis View: AV_scan_max
+    RC-Corner Name        : RC_worst
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/libs/mmmc/worst.captbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/libs/mmmc/RC_worst/worst.tch'
+ 
+ Analysis View: AV_scan_typ
+    RC-Corner Name        : RC_typ
+    RC-Corner Index       : 1
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/libs/mmmc/typical.captbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/libs/mmmc/RC_typ/typical.tch'
+ 
+ Analysis View: AV_func_min
+    RC-Corner Name        : RC_best
+    RC-Corner Index       : 2
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/libs/mmmc/best.captbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/libs/mmmc/RC_best/best.tch'
+ 
+ Analysis View: AV_scan_min
+    RC-Corner Name        : RC_best
+    RC-Corner Index       : 2
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/libs/mmmc/best.captbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/libs/mmmc/RC_best/best.tch'
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+The lower process node is set using setDesignMode and the technology file for TQuantus extraction specified. Therefore, the default value for PostRoute extraction mode's effortLevel(-effortLeveloption of the setExtractRCMode) changed from 'low' to 'medium'.
+% Begin Loading timing constraints ... (date=05/12 11:39:33, mem=944.0M)
+Reading timing constraints file '/home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/libs/mmmc/CHIP_func.sdc' ...
+Current (total cpu=0:00:26.7, real=0:00:48.0, peak res=1183.8M, current mem=1183.8M)
+CHIP
+INFO (CTE): Constraints read successfully.
+Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1201.6M, current mem=1201.6M)
+Current (total cpu=0:00:26.8, real=0:00:48.0, peak res=1201.6M, current mem=1201.6M)
+Reading timing constraints file '/home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat/libs/mmmc/CHIP_scan.sdc' ...
+Current (total cpu=0:00:26.8, real=0:00:48.0, peak res=1201.6M, current mem=1201.6M)
+CHIP
+INFO (CTE): Constraints read successfully.
+Ending "Constraint file reading stats" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1202.2M, current mem=1202.2M)
+Current (total cpu=0:00:26.9, real=0:00:48.0, peak res=1202.2M, current mem=1202.2M)
+% End Loading timing constraints ... (date=05/12 11:39:34, total cpu=0:00:00.3, real=0:00:01.0, peak res=1222.0M, current mem=1222.0M)
+**WARN: (IMPIMEX-10014):	The current design data being restored: '/home/111-2/C108110249/lab1/Lab_nangate/innovus/Lab2/DBS/init.enc.dat' has been saved with an older structure. When restoring a subset of views for this database, derate information for inactive delay corners may be inaccesible in the current session. A newer database structure allows more flexibility for change the active view list in-session. To update the current database, you need to restore the design with all views active - and then the next save will update it to the new model.
+Start generating vias ..
+#Skip building auto via since it is not turned on.
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+Via generation completed.
+% Begin Load power constraints ... (date=05/12 11:39:34, mem=1225.5M)
+% End Load power constraints ... (date=05/12 11:39:34, total cpu=0:00:00.0, real=0:00:00.0, peak res=1225.5M, current mem=1225.0M)
+% Begin load AAE data ... (date=05/12 11:39:34, mem=1225.0M)
+% End load AAE data ... (date=05/12 11:39:34, total cpu=0:00:00.0, real=0:00:00.0, peak res=1225.0M, current mem=1225.0M)
+Total number of combinational cells: 99
+Total number of sequential cells: 29
+Total number of tristate cells: 6
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: BUF_X1 BUF_X2 BUF_X4 BUF_X8 BUF_X16 BUF_X32 CLKBUF_X1 CLKBUF_X2 CLKBUF_X3
+Total number of usable buffers: 9
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: INV_X1 INV_X2 INV_X4 INV_X8 INV_X16 INV_X32
+Total number of usable inverters: 6
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells:
+Total number of identified usable delay cells: 0
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+No delay cells were detected in the set of buffers. Buffers will be used to fix hold violations.
+**WARN: (IMPCTE-107):	The following globals have been obsoleted since version 19.12-s087_1. They will be removed in the next release. 
+timing_enable_default_delay_arc
+#% End load design ... (date=05/12 11:39:34, total cpu=0:00:04.4, real=0:00:06.0, peak res=1227.5M, current mem=1224.4M)
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPFP-701            1  The Design Boundary's lower left corner ...
+WARNING   IMPFP-702            1  Head box's upper right corner not on man...
+WARNING   IMPFP-3961           6  The techSite '%s' has no related standar...
+WARNING   IMPEXT-6202          1  In addition to the technology file, the ...
+WARNING   IMPSYT-3004          4  %s                                       
+WARNING   IMPSYT-3046          9  Unknown preference name "%s".            
+WARNING   IMPCTE-107           1  The following globals have been obsolete...
+WARNING   IMPIMEX-10014        1  The current design data being restored: ...
+*** Message Summary: 24 warning(s), 0 error(s)
+
+<CMD> setDrawView fplan
+<CMD> encMessage warning 1
+Un-suppress "**WARN ..." messages.
+<CMD> encMessage debug 0
+<CMD> getIoFlowFlag
+<CMD> setIoFlowFlag 0
+<CMD> floorPlan -site FreePDK45_38x28_10R_NP_162NW_34O -r 1 0.7 50 50 50 50
+Convert 0 swires and 0 svias from compressed groups
+**WARN: (IMPFP-3961):	The techSite 'rf_2p_hse' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'pad' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+**WARN: (IMPFP-325):	Floorplan of the design is resized. All current floorplan objects are automatically derived based on specified new floorplan. This may change blocks, fixed standard cells, existing routes and blockages.
+<CMD> uiSetTool select
+<CMD> getIoFlowFlag
+<CMD> fit
+<CMD> setDrawView fplan
+<CMD> setDrawView fplan
+<CMD> zoomOut
+<CMD> selectObject Module u_DCT
+<CMD> place_design -concurrent_macros
+[11:42:28.261243] Periodic Lic check successful
+[11:42:28.261267] Feature usage summary:
+[11:42:28.261267] Innovus_Impl_System
+[11:42:28.261267] Innovus_GigaPlace_XL_Opt
+
+This command "place_design -concurrent_macros" required an extra checkout of license invs_gigaplace.
+Additional license(s) checked out: 1 'Innovus_GigaPlace_XL_Opt' license(s)
+*** placeDesign #1 [begin] : totSession cpu/real = 0:00:46.1/0:03:40.6 (0.2), mem = 1581.2M
+**INFO: User settings:
+setDesignMode -process                    45
+setExtractRCMode -coupling_c_th           0.1
+setExtractRCMode -engine                  preRoute
+setExtractRCMode -relative_c_th           1
+setExtractRCMode -total_c_th              0
+setDelayCalMode -engine                   aae
+setPlaceMode -place_opt_run_global_place  full
+setAnalysisMode -analysisType             bcwc
+
+No user sequential activity specified, applying default sequential activity of "0.2" for Dynamic Power reporting.
+'set_default_switching_activity' finished successfully.
+*** Starting GigaPlace ***
+**ERROR: (IMPSP-365):	Design has inst(s) with SITE 'rf_2p_hse', but the floorplan has no rows defined for this site. Any locations found for such insts will be illegal; create rows for this site to avoid this.
+Type 'man IMPSP-365' for more detail.
+Estimated cell power/ground rail width = 0.175 um
+*** GlobalPlace #1 [begin] : totSession cpu/real = 0:00:46.2/0:03:40.8 (0.2), mem = 1577.3M
+*** Scan Trace Summary (runtime: cpu: 0:00:00.0 , real: 0:00:00.0): 
+Successfully traced 3 scan chains (total 3277 scan bits).
+Start applying DEF ordered sections ...
+Successfully applied all DEF ordered sections.
+*** Scan Sanity Check Summary:
+*** 3 scan chains passed sanity check.
+There is no track adjustment
+-earlyGlobalBlockTracks {}                 # string, default="", private
+-earlyGlobalCapacityScreen {}              # string, default="", private
+**WARN: (IMPSP-9541):	PG routing resource modeling constraint is not specified, please use create_pg_model_for_macro_place to generate it if there is PG routing in the design.
+*** Start deleteBufferTree ***
+Info: Detect buffers to remove automatically.
+Analyzing netlist ...
+Updating netlist
+
+*summary: 72 instances (buffers/inverters) removed
+*** Finish deleteBufferTree (0:00:01.1) ***
+Effort level <high> specified for tdgp_reg2reg_default path_group
+Deleted 0 physical inst  (cell - / prefix -).
+No user-set net weight.
+Net fanout histogram:
+2		: 12847 (81.0%) nets
+3		: 1753 (11.0%) nets
+4     -	14	: 1149 (7.2%) nets
+15    -	39	: 86 (0.5%) nets
+40    -	79	: 21 (0.1%) nets
+80    -	159	: 11 (0.1%) nets
+160   -	319	: 0 (0.0%) nets
+320   -	639	: 0 (0.0%) nets
+640   -	1279	: 1 (0.0%) nets
+1280  -	2559	: 1 (0.0%) nets
+2560  -	5119	: 1 (0.0%) nets
+5120+		: 0 (0.0%) nets
+Options: timingDriven clkGateAware ignoreScan pinGuide congEffort=auto gpeffort=medium 
+*** Scan Trace Summary (runtime: cpu: 0:00:00.0 , real: 0:00:00.0): 
+Successfully traced 3 scan chains (total 3277 scan bits).
+Start applying DEF ordered sections ...
+Successfully applied all DEF ordered sections.
+*** Scan Sanity Check Summary:
+*** 3 scan chains passed sanity check.
+#std cell=10696 (0 fixed + 10696 movable) #buf cell=0 #inv cell=1018 #block=2 (2 floating + 0 preplaced)
+#ioInst=56 #net=12593 #term=40784 #term/net=3.24, #fixedIo=56, #floatIo=0, #fixedPin=31, #floatPin=0
+stdCell: 10696 single + 0 double + 0 multi
+Total standard cell length = 24.0954 (mm), area = 0.0337 (mm^2)
+**ERROR: (IMPSP-365):	Design has inst(s) with SITE 'rf_2p_hse', but the floorplan has no rows defined for this site. Any locations found for such insts will be illegal; create rows for this site to avoid this.
+Type 'man IMPSP-365' for more detail.
+Average macro density = 0.094.
+Average module density = 0.524.
+Density for the design = 0.524.
+       = (stdcell_area 126818 sites (33734 um^2) + block_area 27584 sites (7337 um^2)) / alloc_area 294800 sites (78417 um^2).
+Pin Density = 0.1383.
+            = total # of pins 40784 / total area 294800.
+npgMacroBFForSpreadLevel 1.000000 baseLevel 2 maxLevel 6 tgtUtil 0.093569
+numThread_ = 1 
+=== lastAutoLevel = 9 
+
+total 0 net based  with max net constraints
+Clock gating cells determined by native netlist tracing.
+Iteration  1: Total net bbox = 2.405e+04 (1.73e+04 6.78e+03)
+              Est.  stn bbox = 2.675e+04 (1.86e+04 8.20e+03)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1629.4M
+Iteration  2: Total net bbox = 2.405e+04 (1.73e+04 6.78e+03)
+              Est.  stn bbox = 2.675e+04 (1.86e+04 8.20e+03)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1629.4M
+Iteration  3: Total net bbox = 1.984e+04 (1.03e+04 9.56e+03)
+              Est.  stn bbox = 2.686e+04 (1.36e+04 1.33e+04)
+              cpu = 0:00:00.4 real = 0:00:01.0 mem = 1651.5M
+*** Finished SKP initialization (cpu=0:00:04.9, real=0:00:04.0)***
+
+Active views After View pruning: 
+AV_func_max
+Iteration  4: Total net bbox = 8.630e+04 (5.14e+04 3.49e+04)
+              Est.  stn bbox = 1.008e+05 (5.92e+04 4.16e+04)
+              cpu = 0:00:03.1 real = 0:00:03.0 mem = 1797.3M
+Iteration  5: Total net bbox = 8.630e+04 (5.14e+04 3.49e+04)
+              Est.  stn bbox = 1.008e+05 (5.92e+04 4.16e+04)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1797.3M
+macro_flip: HPWL decrease ratio is 0.060799, horizontally flipped 1, vertically flipped 2
+Iteration  6: Total net bbox = 1.083e+05 (6.09e+04 4.74e+04)
+              Est.  stn bbox = 1.285e+05 (7.21e+04 5.64e+04)
+              cpu = 0:00:04.9 real = 0:00:05.0 mem = 1764.3M
+Iteration  7: Total net bbox = 1.142e+05 (6.68e+04 4.73e+04)
+              Est.  stn bbox = 1.344e+05 (7.81e+04 5.63e+04)
+              cpu = 0:00:00.4 real = 0:00:00.0 mem = 1762.3M
+Iteration  8: Total net bbox = 1.142e+05 (6.68e+04 4.73e+04)
+              Est.  stn bbox = 1.344e+05 (7.81e+04 5.63e+04)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1762.3M
+macro_flip: HPWL decrease ratio is 0.000000, horizontally flipped 0, vertically flipped 0
+Iteration  9: Total net bbox = 1.175e+05 (6.82e+04 4.93e+04)
+              Est.  stn bbox = 1.392e+05 (8.04e+04 5.88e+04)
+              cpu = 0:00:05.5 real = 0:00:06.0 mem = 1757.3M
+Iteration 10: Total net bbox = 1.175e+05 (6.82e+04 4.93e+04)
+              Est.  stn bbox = 1.392e+05 (8.04e+04 5.88e+04)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1757.3M
+macro_flip: HPWL decrease ratio is 0.000000, horizontally flipped 0, vertically flipped 0
+Iteration 11: Total net bbox = 1.193e+05 (6.93e+04 4.99e+04)
+              Est.  stn bbox = 1.413e+05 (8.17e+04 5.95e+04)
+              cpu = 0:00:02.6 real = 0:00:02.0 mem = 1761.3M
+Iteration 12: Total net bbox = 1.193e+05 (6.93e+04 4.99e+04)
+              Est.  stn bbox = 1.413e+05 (8.17e+04 5.95e+04)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1761.3M
+macro_flip: HPWL decrease ratio is 0.000000, horizontally flipped 0, vertically flipped 0
+Iteration 13: Total net bbox = 1.193e+05 (6.93e+04 4.99e+04)
+              Est.  stn bbox = 1.413e+05 (8.17e+04 5.95e+04)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1761.3M
+Finished Global Placement (cpu=0:00:28.4, real=0:00:29.0, mem=1761.3M)
+0 delay mode for cte disabled.
+Info: 30 clock gating cells identified, 27 (on average) moved 81/3
+*** Finished Initial Placement (cpu=0:00:28.6, real=0:00:29.0, mem=1761.3M) ***
+**ERROR: (IMPSP-365):	Design has inst(s) with SITE 'rf_2p_hse', but the floorplan has no rows defined for this site. Any locations found for such insts will be illegal; create rows for this site to avoid this.
+Type 'man IMPSP-365' for more detail.
+Effort level <high> specified for tdgp_reg2reg_default path_group
+Tdgp not successfully inited but do clear! skip clearing
+**placeDesign ... cpu = 0: 0:30, real = 0: 0:32, mem = 1696.3M **
+AAE DB initialization (MEM=1721.08 CPU=0:00:00.0 REAL=0:00:00.0) 
+*** GlobalPlace #1 [finish] : cpu/real = 0:00:30.9/0:00:31.8 (1.0), totSession cpu/real = 0:01:17.1/0:04:12.6 (0.3), mem = 1721.1M
+**place_opt_design ... cpu = 0:00:31, real = 0:00:32, mem = 1721.1M **
+*** Finished GigaPlace ***
+INFO: refine_macro_place must be run to legalize macros.
+*** placeDesign #1 [finish] : cpu/real = 0:00:31.0/0:00:32.0 (1.0), totSession cpu/real = 0:01:17.1/0:04:12.6 (0.3), mem = 1721.1M
+<CMD> uiSetTool move
+<CMD> selectObject Module u_DCT
+<CMD> setObjFPlanBox Module u_DCT -394.826 3.717 -197.366 201.177
+<CMD> uiSetTool move
+<CMD> uiSetTool select
+<CMD> deselectAll
+<CMD> selectObject Module u_DCT
+<CMD> deselectAll
+<CMD> selectObject Module u_IDCT
+<CMD> deselectAll
+<CMD> set sprCreateIeRingOffset 1.0
+<CMD> set sprCreateIeRingThreshold 1.0
+<CMD> set sprCreateIeRingJogDistance 1.0
+<CMD> set sprCreateIeRingLayers {}
+<CMD> set sprCreateIeRingOffset 1.0
+<CMD> set sprCreateIeRingThreshold 1.0
+<CMD> set sprCreateIeRingJogDistance 1.0
+<CMD> set sprCreateIeRingLayers {}
+<CMD> set sprCreateIeStripeWidth 10.0
+<CMD> set sprCreateIeStripeThreshold 1.0
+<CMD> set sprCreateIeStripeWidth 10.0
+<CMD> set sprCreateIeStripeThreshold 1.0
+<CMD> set sprCreateIeRingOffset 1.0
+<CMD> set sprCreateIeRingThreshold 1.0
+<CMD> set sprCreateIeRingJogDistance 1.0
+<CMD> set sprCreateIeRingLayers {}
+<CMD> set sprCreateIeStripeWidth 10.0
+<CMD> set sprCreateIeStripeThreshold 1.0
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer metal10 -stacked_via_bottom_layer metal1 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+<CMD> addRing -nets {VDD VSS} -type core_rings -follow core -layer {top metal1 bottom metal1 left metal2 right metal2} -width {top 3 bottom 3 left 3 right 3} -spacing {top 1.5 bottom 1.5 left 1.5 right 1.5} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None -use_wire_group 1 -use_wire_group_bits 5 -use_interleaving_wire_group 1
+
+Loading cell geometries (cpu: 0:00:00.1, real: 0:00:00.0, peak mem: 1733.3M)
+Ring generation is complete.
+vias are now being generated.
+addRing created 40 wires.
+ViaGen created 200 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+| metal1 |       20       |       NA       |
+|  via1  |       200      |        0       |
+| metal2 |       20       |       NA       |
++--------+----------------+----------------+
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer metal10 -stacked_via_bottom_layer metal1 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+<CMD> addRing -nets {VDD VSS} -type core_rings -follow core -layer {top metal1 bottom metal1 left metal2 right metal2} -width {top 3 bottom 3 left 3 right 3} -spacing {top 1.5 bottom 1.5 left 1.5 right 1.5} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None -use_wire_group 1 -use_wire_group_bits 5 -use_interleaving_wire_group 1
+
+Loading cell geometries (cpu: 0:00:00.1, real: 0:00:00.0, peak mem: 1739.0M)
+Ring generation is complete.
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer metal10 -stacked_via_bottom_layer metal1 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+<CMD> addRing -nets {VDD VSS} -type core_rings -follow core -layer {top metal1 bottom metal1 left metal2 right metal2} -width {top 3 bottom 3 left 3 right 3} -spacing {top 1.5 bottom 1.5 left 1.5 right 1.5} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None -use_wire_group 1 -use_wire_group_bits 5 -use_interleaving_wire_group 1
+
+Loading cell geometries (cpu: 0:00:00.1, real: 0:00:00.0, peak mem: 1739.0M)
+Ring generation is complete.
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer metal10 -stacked_via_bottom_layer metal1 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+<CMD> addRing -nets {VDD VSS} -type core_rings -follow core -layer {top metal5 bottom metal5 left metal4 right metal4} -width {top 3 bottom 3 left 3 right 3} -spacing {top 1.5 bottom 1.5 left 1.5 right 1.5} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None -use_wire_group 1 -use_wire_group_bits 5 -use_interleaving_wire_group 1
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1739.0M)
+Ring generation is complete.
+vias are now being generated.
+**WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer metal4 & metal2 at (208.86, 208.82) (211.86, 570.42).
+**WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer metal4 & metal2 at (217.86, 208.82) (220.86, 570.42).
+**WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer metal4 & metal2 at (226.86, 208.82) (229.86, 570.42).
+**WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer metal4 & metal2 at (235.86, 208.82) (238.86, 570.42).
+**WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer metal4 & metal2 at (244.86, 208.82) (247.86, 570.42).
+**WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer metal4 & metal2 at (531.52, 208.82) (534.52, 570.42).
+**WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer metal4 & metal2 at (540.52, 208.82) (543.52, 570.42).
+**WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer metal4 & metal2 at (549.52, 208.82) (552.52, 570.42).
+**WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer metal4 & metal2 at (558.52, 208.82) (561.52, 570.42).
+**WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer metal4 & metal2 at (567.52, 208.82) (570.52, 570.42).
+**WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer metal5 & metal1 at (208.86, 208.82) (570.52, 211.82).
+**WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer metal5 & metal1 at (208.86, 217.82) (570.52, 220.82).
+**WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer metal5 & metal1 at (208.86, 226.82) (570.52, 229.82).
+**WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer metal5 & metal1 at (208.86, 235.82) (570.52, 238.82).
+**WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer metal5 & metal1 at (208.86, 244.82) (570.52, 247.82).
+**WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer metal5 & metal1 at (208.86, 531.42) (570.52, 534.42).
+**WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer metal5 & metal1 at (208.86, 540.42) (570.52, 543.42).
+**WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer metal5 & metal1 at (208.86, 549.42) (570.52, 552.42).
+**WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer metal5 & metal1 at (208.86, 558.42) (570.52, 561.42).
+**WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer metal5 & metal1 at (208.86, 567.42) (570.52, 570.42).
+**WARN: (EMS-27):	Message (IMPPP-532) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+addRing created 40 wires.
+ViaGen created 600 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  via2  |       200      |        0       |
+|  via3  |       200      |        0       |
+| metal4 |       20       |       NA       |
+|  via4  |       200      |        0       |
+| metal5 |       20       |       NA       |
++--------+----------------+----------------+
+<CMD> undo
+<CMD> selectWire 204.3600 535.9200 575.0200 538.9200 1 VSS
+<CMD> deleteSelectedFromFPlan
+**ERROR: (IMPSYT-6000):	No Object Selected.
+**ERROR: (IMPSYT-6000):	No Object Selected.
+<CMD> selectWire 208.8600 567.4200 570.5200 570.4200 1 VDD
+<CMD> deselectAll
+<CMD> gui_select -rect {439.86550 568.09100 428.71550 501.19050}
+
+--------------------------------------------------------------------------------
+Exiting Innovus on Fri May 12 11:59:23 2023
+  Total CPU time:     0:02:59
+  Total real time:    0:20:39
+  Peak memory (main): 1531.51MB
+
+
+*** Memory Usage v#1 (Current mem = 1735.016M, initial mem = 387.332M) ***
+*** Message Summary: 70 warning(s), 7 error(s)
+
+--- Ending "Innovus" (totcpu=0:02:57, real=0:20:37, mem=1735.0M) ---

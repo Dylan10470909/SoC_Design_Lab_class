@@ -1,0 +1,52 @@
+Error: Width mismatch on port 'IR14_13' of reference to 'alufunc' in 'alu'. (LINK-3)
+Warning: Unable to resolve reference 'alufunc' in 'alu'. (LINK-5)
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : alu
+Version: U-2022.12
+Date   : Fri Mar 24 12:21:01 2023
+****************************************
+
+Operating Conditions: TYPICAL   Library: saed90nm_typ_htl_lvt_ccs
+Wire Load Model Mode: top
+
+  Startpoint: IR[16] (input port)
+  Endpoint: R[15] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  alu                8000                  saed90nm_typ_htl_lvt_ccs
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  IR[16] (in)                              0.00       0.00 f
+  ALUCTRL/IR[16] (aluctrl)                 0.00       0.00 f
+  ALUCTRL/U30/QN (NAND4X0_LVT)             0.16       0.16 r
+  ALUCTRL/U31/QN (NOR2X0_LVT)              0.13       0.29 f
+  ALUCTRL/U32/QN (NAND4X0_LVT)             0.14       0.42 r
+  ALUCTRL/U34/Q (AO221X1_LVT)              0.20       0.62 r
+  ALUCTRL/U35/Q (OA22X1_LVT)               0.15       0.76 r
+  ALUCTRL/U36/Q (OA221X1_LVT)              0.14       0.90 r
+  ALUCTRL/U41/QN (OAI21X1_LVT)             0.21       1.11 f
+  ALUCTRL/U46/QN (NOR2X0_LVT)              0.15       1.26 r
+  ALUCTRL/U48/QN (NOR2X0_LVT)              0.15       1.41 f
+  ALUCTRL/en_AR_2nd (aluctrl)              0.00       1.41 f
+  U529/QN (NOR2X0_LVT)                     0.15       1.56 r
+  U530/QN (NAND2X0_LVT)                    0.13       1.69 f
+  U533/QN (NOR2X0_LVT)                     0.35       2.04 r
+  U226/Q (AO222X1_LVT)                     0.37       2.41 r
+  R[15] (out)                              0.00       2.41 r
+  data arrival time                                   2.41
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

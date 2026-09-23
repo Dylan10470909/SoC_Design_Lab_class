@@ -1,4 +1,4 @@
-業師/
 # 忽略所有 PowerPoint 簡報檔案
 *.pptx
 *.ppt
+*業師*

@@ -1,0 +1,31 @@
+# VCS 模擬執行檔與編譯資料夾
+simv
+simv.daidir/
+csrc/
+*.o
+*.a
+ucli.key
+*alib-52*
+*csrc*
+
+# Synopsys Design Compiler 暫存檔
+alib-*/
+default.svf
+command
+*.syn.tcl~
+
+# 波形檔與日誌
+*.fsdb
+*.vcd
+novas.rc
+novas.conf
+novas_dump.log
+*.log
+
+# 簡報與備份檔
+*.pptx
+*.ppt
+*~
+*業師*
+新檔案
+abc.tar

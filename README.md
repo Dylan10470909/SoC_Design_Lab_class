@@ -1,7 +1,7 @@
 # 系統晶片設計實習：邏輯合成與多製程 PPA 評估
 # (SoC Design Lab: Logic Synthesis & Multi-Corner PPA Analysis)
 
-> 本倉庫收錄國立高雄科技大學（NKUST）系統晶片設計實習（SoC Design Lab）課程專案。專案以階層化算術邏輯單元（ALU）與運算電路為核心，基於 **Synopsys Design Compiler (DC)** 建立標準 ASIC 邏輯合成自動化流程，並針對不同製程庫（如 90nm / 0.18µm 等）與工作環境條件進行時序（Timing）、面積（Area）與功耗的設計權衡（PPA Trade-offs）分析。
+> 本倉庫收錄系統晶片設計實習（SoC Design Lab）課程專案。專案以階層化算術邏輯單元（ALU）與運算電路為核心，基於 **Synopsys Design Compiler (DC)** 建立標準 ASIC 邏輯合成自動化流程，並針對不同製程庫（如 90nm / 0.18µm 等）與工作環境條件進行時序（Timing）、面積（Area）與功耗的設計權衡（PPA Trade-offs）分析。
 
 ---
 
